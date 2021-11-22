@@ -37,4 +37,9 @@ public class Pool : MonoBehaviour
         client.gameObject.SetActive(false);
         clientList.Add(client);
     }
+
+
+
+
+    
 }
