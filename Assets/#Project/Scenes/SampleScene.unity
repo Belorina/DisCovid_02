@@ -312,11 +312,11 @@ GameObject:
   - component: {fileID: 1648170791}
   - component: {fileID: 1648170790}
   m_Layer: 0
-  m_Name: Ground
+  m_Name: Ground_Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!64 &1648170790
 MeshCollider:
