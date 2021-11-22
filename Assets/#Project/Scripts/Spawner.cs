@@ -14,6 +14,9 @@ public class Spawner : MonoBehaviour
     public float spawnAt = 20f;
 
 
+    //public bool VariantLetsGoNow;
+
+
 
 
 
@@ -22,9 +25,16 @@ public class Spawner : MonoBehaviour
     {
         StartCoroutine(Spawn());
 
-
+        //VariantLetsGoNow = false;
         StartCoroutine(SpawnVariant());
 
+    }
+
+    void Update()
+    {
+        print(conductor.songPositionInBeats);
+
+        //VariantMove();
     }
 
     private IEnumerator Spawn()
@@ -50,25 +60,40 @@ public class Spawner : MonoBehaviour
             ClientBehaviour clientVariant = pool.VariantCreate(transform.position, transform.rotation);
             clientVariant.destination = clientDestination;
 
-
-            yield return new WaitUntil(VariantLetsGoNow);   // pause until true 
+            //yield return new WaitUntil(true);   // pause until true 
+            yield break;
         }
 
     }
 
-    bool VariantLetsGoNow()
-    {
-        if (conductor.songPositionInBeats == spawnAt)
-        {
-            print("song position in beats its egual to spawnAt");
-            return true;
-        }
-        else
-        {
-            return false;
-        }
 
-    }
+    // public void VariantMove()
+    // {
+    //     if (conductor.songPositionInBeats == spawnAt)
+    //     {
+    //         print("song position in beats its egual to spawnAt");
+    //         VariantLetsGoNow = true;
+    //     }
+    //     else
+    //     {
+    //         VariantLetsGoNow = false;
+    //     }
+    // }
+
+
+    // bool VariantLetsGoNow()
+    // {
+    //     if (conductor.songPositionInBeats == spawnAt)
+    //     {
+    //         print("song position in beats its egual to spawnAt");
+    //         return true;
+    //     }
+    //     else
+    //     {
+    //         return false;
+    //     }
+
+    // }
 
 
 }
