@@ -6,6 +6,8 @@ public class Pool : MonoBehaviour
 {
     public List<ClientBehaviour> clientList = new List<ClientBehaviour>();
     public GameObject clientPrefab;
+    public GameObject clientVariantPrefab;
+
 
     public ClientBehaviour Create(Vector3 position, Quaternion rotation)
     {
