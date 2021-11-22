@@ -13,6 +13,7 @@ public class KillZone : MonoBehaviour
         if (client != null)
         {
             pool.Kill(client);
+            pool.KillVariant(client);
         }
     }
 

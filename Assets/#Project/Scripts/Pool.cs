@@ -5,6 +5,9 @@ using UnityEngine;
 public class Pool : MonoBehaviour
 {
     public List<ClientBehaviour> clientList = new List<ClientBehaviour>();
+
+    public List<ClientBehaviour> clientVariantList = new List<ClientBehaviour>();
+
     public GameObject clientPrefab;
     public GameObject clientVariantPrefab;
 
@@ -36,10 +39,55 @@ public class Pool : MonoBehaviour
     {
         client.gameObject.SetActive(false);
         clientList.Add(client);
+
     }
 
 
 
 
-    
+    public ClientBehaviour VariantCreate(Vector3 position, Quaternion rotation)
+    {
+        ClientBehaviour clientVariant = null;
+
+        if (clientVariantList.Count > 0)
+        {
+            clientVariant = clientVariantList[0];
+            clientVariantList.RemoveAt(0);
+            clientVariant.transform.position = position;
+            clientVariant.transform.rotation = rotation;
+            clientVariant.gameObject.SetActive(true);
+
+        }
+        else
+        {
+            GameObject clientVariantGo = Instantiate(clientVariantPrefab, position, rotation);
+            clientVariant = clientVariantGo.GetComponent<ClientBehaviour>();
+
+        }
+        return clientVariant;
+    }
+
+    public void KillVariant(ClientBehaviour clientVariant)
+    {
+
+        clientVariant.gameObject.SetActive(false);
+        clientVariantList.Add(clientVariant);
+
+    }
+
+
+    // public void VariantInstantiate()
+    // {
+
+    //     ClientBehaviour clientVariant = null;
+
+
+    //     GameObject clientVariantGo = Instantiate(clientVariantPrefab, position, rotation);
+    //     clientVariant = clientVariantGo.GetComponent<ClientBehaviour>();
+
+
+    // }
+
+
+
 }

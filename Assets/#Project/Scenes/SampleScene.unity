@@ -167,7 +167,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clientList: []
+  clientVariantList: []
   clientPrefab: {fileID: 2225974840954391654, guid: b52dde4a5a252d54989e9a9cc4d1972e, type: 3}
+  clientVariantPrefab: {fileID: 870864969794094134, guid: 700ba54f78837de4597585b93bfc9a3e, type: 3}
 --- !u!1 &344236016
 GameObject:
   m_ObjectHideFlags: 0
@@ -736,8 +738,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1870980346}
   - component: {fileID: 1870980345}
+  - component: {fileID: 1870980347}
   m_Layer: 0
-  m_Name: Spawner
+  m_Name: Spawners
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -758,6 +761,8 @@ MonoBehaviour:
   pool: {fileID: 33671108}
   delay: 1
   clientDestination: {x: 4, y: 0.5, z: 0}
+  conductor: {fileID: 916823595}
+  spawnAt: 20
 --- !u!4 &1870980346
 Transform:
   m_ObjectHideFlags: 0
@@ -772,3 +777,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1870980347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870980344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a01af9527f1a4f4a98dab8113f48b17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conductor: {fileID: 916823595}
+  clientVariantSpawner: {fileID: 1870980345}
+  spawnAt: 20
