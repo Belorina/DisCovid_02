@@ -8,25 +8,60 @@ public class VariantSpawnTimeline : MonoBehaviour
 
     public Spawner clientVariantSpawner;
 
-    public float spawnAt = 20f;
+    public float spawnBetween = 20f;
+
+    public float andBetween = 21f;
+
+    public bool myBool;
 
 
-// Start is called before the first frame update
+
+
+    // Start is called before the first frame update
     private void Start()
     {
+
+    }
+    public void timeCheck()
+    {
+        if (conductor.songPositionInBeats >= spawnBetween && conductor.songPositionInBeats <= andBetween)
+        {
+
+            myBool = true;
+
+            //           print("it's 20!");
+            //StartCoroutine(clientVariantSpawner.SpawnVariant());
+            //          print("it's past 21!");
+
+        }
+        else
+        {
+            myBool = false;
+            //            print("it's not 20 or past 21 ");
+
+            //StopCoroutine(clientVariantSpawner.SpawnVariant());
+        }
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        timeCheck();
 
-        if (conductor.songPositionInBeats == spawnAt)
+        if (myBool)
         {
-            //StartCoroutine(clientVariantSpawner.SpawnVariant());
+            //clientVariantSpawner
+            // make setactive true again 
 
-            //clientVariantSpawner.SpawnVariant();
-            print("gotta spawn Variant now!");
         }
+        else
+        {
+            StopCoroutine(clientVariantSpawner.SpawnVariant());
+
+        }
+
+
     }
+
 }

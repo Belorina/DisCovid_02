@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// IN KILL VARIANT - condision to get all variants poped and not back in list 
+
+
+
 public class Pool : MonoBehaviour
 {
     public List<ClientBehaviour> clientList = new List<ClientBehaviour>();
@@ -10,6 +14,8 @@ public class Pool : MonoBehaviour
 
     public GameObject clientPrefab;
     public GameObject clientVariantPrefab;
+
+    
 
 
     public ClientBehaviour Create(Vector3 position, Quaternion rotation)
@@ -33,16 +39,12 @@ public class Pool : MonoBehaviour
         return client;
     }
 
-
-
     public void Kill(ClientBehaviour client)
     {
         client.gameObject.SetActive(false);
         clientList.Add(client);
 
     }
-
-
 
 
     public ClientBehaviour VariantCreate(Vector3 position, Quaternion rotation)
@@ -55,7 +57,7 @@ public class Pool : MonoBehaviour
             clientVariantList.RemoveAt(0);
             clientVariant.transform.position = position;
             clientVariant.transform.rotation = rotation;
-            clientVariant.gameObject.SetActive(true);
+            clientVariant.gameObject.SetActive(false);           // was true 
 
         }
         else
@@ -71,23 +73,9 @@ public class Pool : MonoBehaviour
     {
 
         clientVariant.gameObject.SetActive(false);
-        clientVariantList.Add(clientVariant);
+        clientVariantList.Remove(clientVariant);
+
+        
 
     }
-
-
-    // public void VariantInstantiate()
-    // {
-
-    //     ClientBehaviour clientVariant = null;
-
-
-    //     GameObject clientVariantGo = Instantiate(clientVariantPrefab, position, rotation);
-    //     clientVariant = clientVariantGo.GetComponent<ClientBehaviour>();
-
-
-    // }
-
-
-
 }

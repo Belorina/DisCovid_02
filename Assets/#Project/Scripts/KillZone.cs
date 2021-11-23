@@ -2,15 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class KillZone : MonoBehaviour
 {
     public Pool pool;
 
+    public ClientBehaviour client;
+
+    public ClientBehaviour clientVariant;
+
+
     private void OnTriggerEnter(Collider other)
     {
-        ClientBehaviour client = other.GetComponent<ClientBehaviour>();
 
-        if (client != null)
+        if (other.CompareTag("Not_Masked"))
+        {
+            clientVariant = other.GetComponent<ClientBehaviour>();
+        }
+        else
+        {
+            client = other.GetComponent<ClientBehaviour>();
+        }
+
+
+        if (client != null || clientVariant != null)
         {
             pool.Kill(client);
             pool.KillVariant(client);

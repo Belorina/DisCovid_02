@@ -15,11 +15,11 @@ public class ClientBehaviour : MonoBehaviour
 
     public Vector3 destination;
 
-    private Pool pool;
+    public Pool pool;
 
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         pool = FindObjectOfType<Pool>();
     }

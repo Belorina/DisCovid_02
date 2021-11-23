@@ -8,10 +8,7 @@ public class Spawner : MonoBehaviour
     public float delay = 1f;
     public Vector3 clientDestination;
 
-
-
-    public Conductor conductor;
-    public float spawnAt = 20f;
+    public ClientBehaviour clientVariant;
 
 
     //public bool VariantLetsGoNow;
@@ -23,25 +20,36 @@ public class Spawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(Spawn());
+        clientVariant = pool.VariantCreate(transform.position, transform.rotation);
+        clientVariant.gameObject.SetActive(false);
+        
 
-        //VariantLetsGoNow = false;
+
+
+
+
+        StartCoroutine(Spawn());
         StartCoroutine(SpawnVariant());
+
+
+
+
 
     }
 
+
+
     void Update()
     {
-        print(conductor.songPositionInBeats);
 
-        //VariantMove();
+
     }
 
     private IEnumerator Spawn()
     {
         while (true)
         {
-            print("spawning client create method caled");
+            //print("spawning client create method caled");
 
             ClientBehaviour client = pool.Create(transform.position, transform.rotation);
             client.destination = clientDestination;
@@ -55,45 +63,20 @@ public class Spawner : MonoBehaviour
         while (true)
         {
 
-            print("VARIANT SPAWNED  ");
-
-            ClientBehaviour clientVariant = pool.VariantCreate(transform.position, transform.rotation);
+            print("Variant Spawn");
             clientVariant.destination = clientDestination;
 
-            //yield return new WaitUntil(true);   // pause until true 
-            yield break;
+
+
+
+
+            yield return new WaitForSeconds(delay);
+
         }
+
 
     }
 
-
-    // public void VariantMove()
-    // {
-    //     if (conductor.songPositionInBeats == spawnAt)
-    //     {
-    //         print("song position in beats its egual to spawnAt");
-    //         VariantLetsGoNow = true;
-    //     }
-    //     else
-    //     {
-    //         VariantLetsGoNow = false;
-    //     }
-    // }
-
-
-    // bool VariantLetsGoNow()
-    // {
-    //     if (conductor.songPositionInBeats == spawnAt)
-    //     {
-    //         print("song position in beats its egual to spawnAt");
-    //         return true;
-    //     }
-    //     else
-    //     {
-    //         return false;
-    //     }
-
-    // }
 
     void OnDrawGizmos()
     {
