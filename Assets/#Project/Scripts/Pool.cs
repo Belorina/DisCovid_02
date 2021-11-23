@@ -57,7 +57,7 @@ public class Pool : MonoBehaviour
             clientVariantList.RemoveAt(0);
             clientVariant.transform.position = position;
             clientVariant.transform.rotation = rotation;
-            clientVariant.gameObject.SetActive(false);           // was true 
+            clientVariant.gameObject.SetActive(true);
 
         }
         else

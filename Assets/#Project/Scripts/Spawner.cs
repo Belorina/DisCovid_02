@@ -10,10 +10,9 @@ public class Spawner : MonoBehaviour
 
     public ClientBehaviour clientVariant;
 
+    public VariantSpawnTimeline variantScript;
 
-    //public bool VariantLetsGoNow;
-
-
+    public bool timer;
 
 
 
@@ -23,6 +22,10 @@ public class Spawner : MonoBehaviour
         clientVariant = pool.VariantCreate(transform.position, transform.rotation);
         clientVariant.gameObject.SetActive(false);
         
+
+        //timer = variantScript.timeCheck();
+
+        //timer = VariantSpawnTimeline.timeCheck();
 
 
 
@@ -41,6 +44,17 @@ public class Spawner : MonoBehaviour
 
     void Update()
     {
+        
+        if (variantScript.timeCheck())
+        {
+            print("timeCheck is true!");
+            clientVariant.gameObject.SetActive(true);
+        }
+        else
+        {
+            print("timeCheck is false :(");
+            clientVariant.gameObject.SetActive(false);
+        }
 
 
     }

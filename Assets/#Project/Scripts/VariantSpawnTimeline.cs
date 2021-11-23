@@ -12,7 +12,7 @@ public class VariantSpawnTimeline : MonoBehaviour
 
     public float andBetween = 21f;
 
-    public bool myBool;
+    //public bool myBool;
 
 
 
@@ -22,24 +22,23 @@ public class VariantSpawnTimeline : MonoBehaviour
     {
 
     }
-    public void timeCheck()
+
+    public bool timeCheck()
     {
         if (conductor.songPositionInBeats >= spawnBetween && conductor.songPositionInBeats <= andBetween)
         {
 
-            myBool = true;
+            //myBool = true;
 
-            //           print("it's 20!");
-            //StartCoroutine(clientVariantSpawner.SpawnVariant());
-            //          print("it's past 21!");
+            return true;
+
 
         }
         else
         {
-            myBool = false;
-            //            print("it's not 20 or past 21 ");
-
-            //StopCoroutine(clientVariantSpawner.SpawnVariant());
+            //myBool = false;
+            return false;
+        
         }
 
     }
@@ -48,18 +47,6 @@ public class VariantSpawnTimeline : MonoBehaviour
     void Update()
     {
         timeCheck();
-
-        if (myBool)
-        {
-            //clientVariantSpawner
-            // make setactive true again 
-
-        }
-        else
-        {
-            StopCoroutine(clientVariantSpawner.SpawnVariant());
-
-        }
 
 
     }
