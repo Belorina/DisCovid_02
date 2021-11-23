@@ -18,6 +18,13 @@ public class KillZone : MonoBehaviour
     }
 
 
+    void OnDrawGizmos()
+    {
+        Gizmos.color = new Color(1, 0, 0, 0.2f);
+        Gizmos.DrawCube(transform.position, new Vector3(2f, 2f, 2f));
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
