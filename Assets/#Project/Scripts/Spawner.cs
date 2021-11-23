@@ -95,5 +95,11 @@ public class Spawner : MonoBehaviour
 
     // }
 
+    void OnDrawGizmos()
+    {
+        Gizmos.color = new Color(0, 0, 1, 0.2f);
+        Gizmos.DrawCube(transform.position, new Vector3(1f, 1f, 1f));
+    }
+
 
 }
