@@ -12,27 +12,20 @@ public class Spawner : MonoBehaviour
 
     public VariantSpawnTimeline variantScript;
 
-    public bool timer;
+
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        clientVariant = pool.VariantCreate(transform.position, transform.rotation);
-        clientVariant.gameObject.SetActive(false);
-        
-
-        //timer = variantScript.timeCheck();
-
-        //timer = VariantSpawnTimeline.timeCheck();
 
 
 
 
 
         StartCoroutine(Spawn());
-        StartCoroutine(SpawnVariant());
+        StartCoroutine(SpawnVariant());     // have to start coroutine in start method otherwhise spawn multiple at once
 
 
 
@@ -44,17 +37,17 @@ public class Spawner : MonoBehaviour
 
     void Update()
     {
-        
-        if (variantScript.timeCheck())
-        {
-            print("timeCheck is true!");
-            clientVariant.gameObject.SetActive(true);
-        }
-        else
-        {
-            print("timeCheck is false :(");
-            clientVariant.gameObject.SetActive(false);
-        }
+
+        // if (variantScript.timeCheck())
+        // {
+        //     print("timeCheck is true!");
+        //     clientVariant.gameObject.SetActive(true);
+        // }
+        // else
+        // {
+        //     print("timeCheck is false :(");
+        //     clientVariant.gameObject.SetActive(false);
+        // }
 
 
     }
@@ -76,13 +69,13 @@ public class Spawner : MonoBehaviour
     {
         while (true)
         {
+            print("Variant Spawns");
 
-            print("Variant Spawn");
+            clientVariant = pool.VariantCreate(transform.position, transform.rotation);
+            clientVariant.gameObject.SetActive(true);
+
             clientVariant.destination = clientDestination;
-
-
-
-
+            // tried to SetActive(false) here didn't work (?)
 
             yield return new WaitForSeconds(delay);
 

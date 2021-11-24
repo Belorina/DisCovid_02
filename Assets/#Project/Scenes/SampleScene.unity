@@ -487,8 +487,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pool: {fileID: 33671108}
-  client: {fileID: 0}
-  clientVariant: {fileID: 0}
+  client: {fileID: 5966806538699454084, guid: b52dde4a5a252d54989e9a9cc4d1972e, type: 3}
+  clientVariant: {fileID: 4629689076063878868, guid: 700ba54f78837de4597585b93bfc9a3e, type: 3}
 --- !u!65 &935182943
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -765,7 +765,6 @@ MonoBehaviour:
   clientDestination: {x: 4, y: 0.5, z: 0}
   clientVariant: {fileID: 0}
   variantScript: {fileID: 1870980347}
-  timer: 0
 --- !u!4 &1870980346
 Transform:
   m_ObjectHideFlags: 0

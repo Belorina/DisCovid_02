@@ -29,7 +29,7 @@ public class KillZone : MonoBehaviour
         if (client != null || clientVariant != null)
         {
             pool.Kill(client);
-            pool.KillVariant(client);
+            pool.KillVariant(clientVariant);
         }
     }
 
