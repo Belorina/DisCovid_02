@@ -72,7 +72,7 @@ public class Spawner : MonoBehaviour
             print("Variant Spawns");
 
             clientVariant = pool.VariantCreate(transform.position, transform.rotation);
-            clientVariant.gameObject.SetActive(true);
+            clientVariant.gameObject.SetActive(false);
 
             clientVariant.destination = clientDestination;
             // tried to SetActive(false) here didn't work (?)
