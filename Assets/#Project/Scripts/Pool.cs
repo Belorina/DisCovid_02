@@ -15,7 +15,12 @@ public class Pool : MonoBehaviour
     public GameObject clientPrefab;
     public GameObject clientVariantPrefab;
 
-    
+    public VariantSpawnTimeline variantScript;
+
+    private ClientBehaviour clientVariant;
+
+
+
 
 
     public ClientBehaviour Create(Vector3 position, Quaternion rotation)
@@ -41,41 +46,80 @@ public class Pool : MonoBehaviour
 
     public void Kill(ClientBehaviour client)
     {
+
         client.gameObject.SetActive(false);
         clientList.Add(client);
+        print("Kill");
 
     }
 
 
     public ClientBehaviour VariantCreate(Vector3 position, Quaternion rotation)
     {
-        ClientBehaviour clientVariant = null;
+        clientVariant = null;
 
         if (clientVariantList.Count > 0)
         {
             clientVariant = clientVariantList[0];
-            clientVariantList.RemoveAt(0);
             clientVariant.transform.position = position;
             clientVariant.transform.rotation = rotation;
-            clientVariant.gameObject.SetActive(true);       // doesn't detect this SetActive ? 
+            clientVariant.gameObject.SetActive(false);   // works because prefab is active 
 
         }
         else
         {
             GameObject clientVariantGo = Instantiate(clientVariantPrefab, position, rotation);
             clientVariant = clientVariantGo.GetComponent<ClientBehaviour>();
+            clientVariantList.Add(clientVariant);
 
         }
         return clientVariant;
     }
 
+
+    public void ShowVariant()
+    {
+        if (variantScript.timeCheck())
+        {
+            if (clientVariantList.Count > 0)
+            {
+                clientVariantList.RemoveAt(0);
+
+            }
+
+            clientVariant.gameObject.SetActive(true);
+
+        }
+
+         if (variantScript.secondTimeCheck())
+        {
+            if (clientVariantList.Count > 0)
+            {
+                clientVariantList.RemoveAt(0);
+
+            }
+
+            clientVariant.gameObject.SetActive(true);
+
+        }
+
+    }
+
+
+
+
     public void KillVariant(ClientBehaviour clientVariant)
     {
 
+        print("KillVariant");
+
         clientVariant.gameObject.SetActive(false);
         clientVariantList.Add(clientVariant);
+    }
 
-        
 
+    void Update()
+    {
+        ShowVariant();
     }
 }

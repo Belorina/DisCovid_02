@@ -13,23 +13,26 @@ public class KillZone : MonoBehaviour
     public ClientBehaviour clientVariant;
 
 
-    private void OnTriggerEnter(Collider other)
+    void Start()
     {
-
-        if (other.CompareTag("Not_Masked"))
-        {
-            clientVariant = other.GetComponent<ClientBehaviour>();
-        }
-        else
-        {
-            client = other.GetComponent<ClientBehaviour>();
-        }
+    }
 
 
-        if (client != null || clientVariant != null)
+    public void OnTriggerEnter(Collider other)
+    {
+        client = other.GetComponent<ClientBehaviour>();
+        clientVariant = other.GetComponent<ClientBehaviour>();
+
+
+        if (client != null && client.CompareTag("Masked"))
         {
             pool.Kill(client);
+        }
+
+        if (clientVariant != null && clientVariant.CompareTag("Not_Masked"))
+        {
             pool.KillVariant(clientVariant);
+
         }
     }
 
@@ -40,12 +43,6 @@ public class KillZone : MonoBehaviour
         Gizmos.DrawCube(transform.position, new Vector3(2f, 2f, 2f));
     }
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()

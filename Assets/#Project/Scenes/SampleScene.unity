@@ -170,6 +170,7 @@ MonoBehaviour:
   clientVariantList: []
   clientPrefab: {fileID: 2225974840954391654, guid: b52dde4a5a252d54989e9a9cc4d1972e, type: 3}
   clientVariantPrefab: {fileID: 870864969794094134, guid: 700ba54f78837de4597585b93bfc9a3e, type: 3}
+  variantScript: {fileID: 1870980347}
 --- !u!1 &344236016
 GameObject:
   m_ObjectHideFlags: 0
@@ -324,7 +325,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 7084327686981971700, guid: 87ca1e440460847449dc68f4568c0546, type: 2}
   m_audioClip: {fileID: 8300000, guid: 3b32c84f1c894414faa7cb6caa7729f8, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -794,4 +795,5 @@ MonoBehaviour:
   conductor: {fileID: 916823595}
   clientVariantSpawner: {fileID: 1870980345}
   spawnBetween: 20
-  andBetween: 21
+  andBetween: 25
+  timeDetection: 0

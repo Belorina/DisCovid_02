@@ -23,34 +23,18 @@ public class Spawner : MonoBehaviour
 
 
 
-
-        StartCoroutine(Spawn());
         StartCoroutine(SpawnVariant());     // have to start coroutine in start method otherwhise spawn multiple at once
 
+        StartCoroutine(Spawn());
 
 
 
-
-    }
-
-
-
-    void Update()
-    {
-
-        // if (variantScript.timeCheck())
-        // {
-        //     print("timeCheck is true!");
-        //     clientVariant.gameObject.SetActive(true);
-        // }
-        // else
-        // {
-        //     print("timeCheck is false :(");
-        //     clientVariant.gameObject.SetActive(false);
-        // }
 
 
     }
+
+
+
 
     private IEnumerator Spawn()
     {
@@ -69,13 +53,9 @@ public class Spawner : MonoBehaviour
     {
         while (true)
         {
-            print("Variant Spawns");
-
             clientVariant = pool.VariantCreate(transform.position, transform.rotation);
-            clientVariant.gameObject.SetActive(false);
 
             clientVariant.destination = clientDestination;
-            // tried to SetActive(false) here didn't work (?)
 
             yield return new WaitForSeconds(delay);
 
@@ -84,6 +64,26 @@ public class Spawner : MonoBehaviour
 
     }
 
+    void Update()
+    {
+        // if (variantScript.timeCheck())
+        // {
+
+        //     print("it's true!");
+
+        //     clientVariant.gameObject.SetActive(true);
+        //     print(clientVariant.gameObject.activeInHierarchy);
+
+        // }
+        // else
+        // {
+
+        //     clientVariant.gameObject.SetActive(false);
+        // }
+
+
+
+    }
 
     void OnDrawGizmos()
     {

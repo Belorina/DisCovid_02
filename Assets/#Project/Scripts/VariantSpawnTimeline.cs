@@ -12,7 +12,12 @@ public class VariantSpawnTimeline : MonoBehaviour
 
     public float andBetween = 21f;
 
-    //public bool myBool;
+    public bool timeDetection;
+
+    public float secondSpawnBetween = 25f;
+    public float secondAndBetween = 26f;
+
+    
 
 
 
@@ -27,27 +32,41 @@ public class VariantSpawnTimeline : MonoBehaviour
     {
         if (conductor.songPositionInBeats >= spawnBetween && conductor.songPositionInBeats <= andBetween)
         {
-
-            //myBool = true;
+            timeDetection = true;
 
             return true;
-
-
         }
         else
         {
-            //myBool = false;
+            timeDetection = false;
             return false;
-        
         }
 
     }
+
+    public bool secondTimeCheck()
+    {
+        if (conductor.songPositionInBeats >= secondSpawnBetween && conductor.songPositionInBeats <= secondAndBetween)
+        {
+            timeDetection = true;
+
+            return true;
+        }
+        else
+        {
+            timeDetection = false;
+            return false;
+        }
+
+    }
+
 
     // Update is called once per frame
     void Update()
     {
         timeCheck();
-
+        secondTimeCheck();
+        
 
     }
 
