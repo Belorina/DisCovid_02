@@ -23,8 +23,6 @@ public class Pool : MonoBehaviour
 
 
 
-
-
     public ClientBehaviour Create(Vector3 position, Quaternion rotation)
     {
         client = null;

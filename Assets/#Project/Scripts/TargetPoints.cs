@@ -1,54 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class TargetPoints : MonoBehaviour
 {
-    public ClientBehaviour client;
-    public Transform[] points;
-    private int destPoint = 0;
+    public Vector3 position;
 
+    public Vector3 point; 
+
+    public Vector3 GivePoint()
+    {
+        print("giving point");
+        point = Vector3.zero;
+
+        point.z = point.y;
+        point.y = 0;
+
+        point += transform.position;
+        return point;
+    }
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        client = GetComponent<ClientBehaviour>();
-
-        client.agent.autoBraking = false;
-
-        GotoNextPoint();
-
-
+        //position = gameObject.transform.position;
+        //print(point);
+        
     }
 
-    void GotoNextPoint()
+    private void OnDrawGizmos()
     {
-        //REturns is no points have been set up
-        if (points.Length == 0)
-        {
-            return;
-        }
-
-        // Se agent to go to the currently selected destinaton 
-        client.agent.destination = points[destPoint].position;
-
-        // Choose the next point in the array as the destination,
-        // cycling to the start if necessary.
-        destPoint = (destPoint + 1) % points.Length;
-
+        Gizmos.color = new Color(0f, 0.5f, 0.9f, 0.4f);
+        Gizmos.DrawSphere(transform.position, 1f);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        // Choose the next destination point when the agent gets
-        // close to the current one.
-        if (!client.agent.pathPending && client.agent.remainingDistance < 0.5f)
-        {
-            GotoNextPoint();
-        }
-    }
+    
 }

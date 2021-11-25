@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
+
 
 public class Spawner : MonoBehaviour
 {
@@ -9,7 +11,12 @@ public class Spawner : MonoBehaviour
 
     //public Vector3 clientDestination;
 
+    
+
+
     public ClientBehaviour clientVariant;
+    public ClientBehaviour client;
+
 
     public VariantSpawnTimeline variantScript;
 
@@ -20,8 +27,8 @@ public class Spawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-
+        
+    
 
 
         StartCoroutine(SpawnVariant());     // have to start coroutine in start method otherwhise spawn multiple at once
@@ -43,7 +50,7 @@ public class Spawner : MonoBehaviour
         {
             //print("spawning client create method caled");
 
-            ClientBehaviour client = pool.Create(transform.position, transform.rotation);
+            client = pool.Create(transform.position, transform.rotation);
             //client.destination = clientDestination;
 
             yield return new WaitForSeconds(delay);
