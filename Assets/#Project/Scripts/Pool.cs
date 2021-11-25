@@ -119,4 +119,14 @@ public class Pool : MonoBehaviour
     {
         ShowVariant();
     }
+
+    // public void OnDrawGizmos()
+    // {
+    //     Gizmos.color = new Color(0f, 1f, 0f, 0.4f);
+    //     Gizmos.DrawSphere(transform.position, 1f);
+    // }
+
+
+
+
 }

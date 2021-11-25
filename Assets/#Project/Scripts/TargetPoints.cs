@@ -5,18 +5,19 @@ using UnityEngine.AI;
 
 public class TargetPoints : MonoBehaviour
 {
-    public NavMeshAgent agent;
+    public ClientBehaviour client;
     public Transform[] points;
     private int destPoint = 0;
+
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
+        client = GetComponent<ClientBehaviour>();
 
-        agent.autoBraking = false;
+        client.agent.autoBraking = false;
 
         GotoNextPoint();
 
@@ -32,7 +33,7 @@ public class TargetPoints : MonoBehaviour
         }
 
         // Se agent to go to the currently selected destinaton 
-        agent.destination = points[destPoint].position;
+        client.agent.destination = points[destPoint].position;
 
         // Choose the next point in the array as the destination,
         // cycling to the start if necessary.
@@ -45,7 +46,7 @@ public class TargetPoints : MonoBehaviour
     {
         // Choose the next destination point when the agent gets
         // close to the current one.
-        if (!agent.pathPending && agent.remainingDistance < 0.5f)
+        if (!client.agent.pathPending && client.agent.remainingDistance < 0.5f)
         {
             GotoNextPoint();
         }

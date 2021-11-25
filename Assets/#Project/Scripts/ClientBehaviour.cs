@@ -11,9 +11,9 @@ public class ClientBehaviour : MonoBehaviour
 {
 
     [SerializeField]
-    private NavMeshAgent agent; 
+    public NavMeshAgent agent; 
 
-    public Vector3 destination;
+    //public Vector3 destination;
 
     private Pool pool;
 
@@ -27,6 +27,7 @@ public class ClientBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetComponent<NavMeshAgent>().SetDestination(destination);
+        //GetComponent<NavMeshAgent>().SetDestination(destination);      setting position in targetPoints
+        GetComponent<NavMeshAgent>();
     }
 }

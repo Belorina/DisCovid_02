@@ -7,7 +7,7 @@ public class Spawner : MonoBehaviour
     public Pool pool;
     public float delay = 1f;
 
-    public Vector3 clientDestination;
+    //public Vector3 clientDestination;
 
     public ClientBehaviour clientVariant;
 
@@ -44,7 +44,7 @@ public class Spawner : MonoBehaviour
             //print("spawning client create method caled");
 
             ClientBehaviour client = pool.Create(transform.position, transform.rotation);
-            client.destination = clientDestination;
+            //client.destination = clientDestination;
 
             yield return new WaitForSeconds(delay);
         }
@@ -56,7 +56,7 @@ public class Spawner : MonoBehaviour
         {
             clientVariant = pool.VariantCreate(transform.position, transform.rotation);
 
-            clientVariant.destination = clientDestination;
+            //clientVariant.destination = clientDestination;
 
             yield return new WaitForSeconds(delay);
 
@@ -88,7 +88,7 @@ public class Spawner : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        Gizmos.color = new Color(0, 0, 1, 0.2f);
+        Gizmos.color = new Color(0, 1, 0, 0.2f);
         Gizmos.DrawCube(transform.position, new Vector3(1f, 1f, 1f));
     }
 
