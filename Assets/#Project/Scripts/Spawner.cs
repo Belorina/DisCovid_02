@@ -6,6 +6,7 @@ public class Spawner : MonoBehaviour
 {
     public Pool pool;
     public float delay = 1f;
+
     public Vector3 clientDestination;
 
     public ClientBehaviour clientVariant;

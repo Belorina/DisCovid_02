@@ -44,28 +44,11 @@ public class VariantSpawnTimeline : MonoBehaviour
 
     }
 
-    public bool secondTimeCheck()
-    {
-        if (conductor.songPositionInBeats >= secondSpawnBetween && conductor.songPositionInBeats <= secondAndBetween)
-        {
-            timeDetection = true;
-
-            return true;
-        }
-        else
-        {
-            timeDetection = false;
-            return false;
-        }
-
-    }
-
 
     // Update is called once per frame
     void Update()
     {
         timeCheck();
-        secondTimeCheck();
         
 
     }

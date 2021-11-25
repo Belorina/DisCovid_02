@@ -795,5 +795,7 @@ MonoBehaviour:
   conductor: {fileID: 916823595}
   clientVariantSpawner: {fileID: 1870980345}
   spawnBetween: 20
-  andBetween: 25
+  andBetween: 21
   timeDetection: 0
+  secondSpawnBetween: 25
+  secondAndBetween: 26

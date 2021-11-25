@@ -79,7 +79,7 @@ public class Pool : MonoBehaviour
 
     public void ShowVariant()
     {
-        if (variantScript.timeCheck())
+        if (variantScript.timeCheck())      // show Variant if time is true 
         {
             if (clientVariantList.Count > 0)
             {
@@ -90,19 +90,6 @@ public class Pool : MonoBehaviour
             clientVariant.gameObject.SetActive(true);
 
         }
-
-         if (variantScript.secondTimeCheck())
-        {
-            if (clientVariantList.Count > 0)
-            {
-                clientVariantList.RemoveAt(0);
-
-            }
-
-            clientVariant.gameObject.SetActive(true);
-
-        }
-
     }
 
 
