@@ -13,10 +13,11 @@ public class ClientBehaviour : MonoBehaviour
     [SerializeField]
     private NavMeshAgent agent;
 
+    [SerializeField]
     private Pool pool;
 
 
-    public List<TargetPoints> targetPoints = new List<TargetPoints>();
+    public List<TargetPoints> targetPoints;
 
 
     [SerializeField]
@@ -27,18 +28,28 @@ public class ClientBehaviour : MonoBehaviour
 
     public float clientSpeed = 2f;
 
+    [SerializeField]
+    public Test test;
+
+
 
 
 
     // Start is called before the first frame update
     public void Start()
     {
+
+
         agent = GetComponent<NavMeshAgent>();
         agent.autoBraking = false;
         agent.speed = clientSpeed;
 
         indexNextDestination = -1;
 
+        test = FindObjectOfType<Test>();
+
+        test.targetPoint = targetPoints;
+        
 
         pool = FindObjectOfType<Pool>();
 

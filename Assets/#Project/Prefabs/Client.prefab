@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: -251854830088154665}
   - component: {fileID: 6427161971003592245}
   - component: {fileID: 5966806538699454084}
-  - component: {fileID: 6880864741270050665}
   m_Layer: 0
   m_Name: Client
   m_TagString: Masked
@@ -152,23 +151,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: -251854830088154665}
   pool: {fileID: 0}
-  points: []
-  spawner: {fileID: 6880864741270050665}
---- !u!114 &6880864741270050665
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2225974840954391654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 613cd1c68b2f99345a8f6a5bbb0f559a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pool: {fileID: 0}
-  delay: 1
-  destPoints: []
-  clientVariant: {fileID: 0}
-  client: {fileID: 0}
-  variantScript: {fileID: 0}
+  targetPoints:
+  - {fileID: 5647525578637624626, guid: ee67fbf8298aff94788a7dbe081e4586, type: 3}
+  - {fileID: 5015663059675227579, guid: 53132dfedecf93b4b96aa3a063406208, type: 3}
+  - {fileID: 4257231012176214820, guid: 4c3c2b7a85be835468148234f654347a, type: 3}
+  indexNextDestination: 0
+  actualDestination: {x: 0, y: 0, z: 0}
+  clientSpeed: 2
+  test: {fileID: 1571220319353203281, guid: a4f31075900d6f244a40bd79655e96f1, type: 3}
