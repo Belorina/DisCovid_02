@@ -15,7 +15,7 @@ public class ClientBehaviour : MonoBehaviour
 
     public Vector3 destination;
 
-    public Pool pool;
+    private Pool pool;
 
 
     // Start is called before the first frame update

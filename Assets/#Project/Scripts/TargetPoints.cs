@@ -5,10 +5,10 @@ using UnityEngine.AI;
 
 public class TargetPoints : MonoBehaviour
 {
+    public NavMeshAgent agent;
     public Transform[] points;
     private int destPoint = 0;
 
-    public NavMeshAgent agent;
 
 
     // Start is called before the first frame update
