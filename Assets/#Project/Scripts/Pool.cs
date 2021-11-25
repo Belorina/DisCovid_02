@@ -19,13 +19,15 @@ public class Pool : MonoBehaviour
 
     private ClientBehaviour clientVariant;
 
+    private ClientBehaviour client;
+
 
 
 
 
     public ClientBehaviour Create(Vector3 position, Quaternion rotation)
     {
-        ClientBehaviour client = null;
+        client = null;
 
         if (clientList.Count > 0)
         {
@@ -87,9 +89,17 @@ public class Pool : MonoBehaviour
 
             }
 
+            //client.gameObject.SetActive(false);       Try to pause spawning of client
+
             clientVariant.gameObject.SetActive(true);
 
         }
+        // else
+        // {
+        //     client.gameObject.SetActive(true);
+
+        // }
+
     }
 
 

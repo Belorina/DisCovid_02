@@ -14,9 +14,6 @@ public class VariantSpawnTimeline : MonoBehaviour
 
     public bool timeDetection;
 
-    public float secondSpawnBetween = 25f;
-    public float secondAndBetween = 26f;
-
     
 
 
