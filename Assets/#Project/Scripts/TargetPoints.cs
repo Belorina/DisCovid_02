@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
-public class Patrol : MonoBehaviour
+public class TargetPoints : MonoBehaviour
 {
     public Transform[] points;
     private int destPoint = 0;
-    private NavMeshAgent agent;
+
+    public NavMeshAgent agent;
 
 
     // Start is called before the first frame update
