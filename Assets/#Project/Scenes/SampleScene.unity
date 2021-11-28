@@ -295,10 +295,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38c9a963452acfd4d9e10d3957becafd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPoint:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  actualDestination: {x: 0, y: 0, z: 0}
+  targetPoints:
+  - {fileID: 1961867287}
+  - {fileID: 303318063}
+  - {fileID: 1637008448}
 --- !u!1 &303318061
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,7 +406,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38c9a963452acfd4d9e10d3957becafd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPoint:
+  actualDestination: {x: 0, y: 0, z: 0}
+  targetPoints:
   - {fileID: 2017151283}
   - {fileID: 444257115}
   - {fileID: 429747717}

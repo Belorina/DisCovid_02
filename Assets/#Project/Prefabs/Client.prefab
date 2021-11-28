@@ -29,13 +29,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2225974840954391654}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.008726558, z: 0, w: 0.999962}
   m_LocalPosition: {x: -8.18, y: 1, z: -0.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 1, z: 0}
 --- !u!33 &2225974840954391651
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -151,10 +151,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: -251854830088154665}
   pool: {fileID: 0}
-  targetPoints:
-  - {fileID: 5647525578637624626, guid: ee67fbf8298aff94788a7dbe081e4586, type: 3}
-  - {fileID: 5015663059675227579, guid: 53132dfedecf93b4b96aa3a063406208, type: 3}
-  - {fileID: 4257231012176214820, guid: 4c3c2b7a85be835468148234f654347a, type: 3}
   indexNextDestination: 0
   actualDestination: {x: 0, y: 0, z: 0}
   clientSpeed: 2

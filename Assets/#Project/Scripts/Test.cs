@@ -5,7 +5,11 @@ using UnityEngine;
 public class Test : MonoBehaviour
 {
 
-    public List<TargetPoints> targetPoint = new List<TargetPoints>();
+    private int indexNextDestination = -1;
+
+    public Vector3 actualDestination;
+
+    public List<TargetPoints> targetPoints = new List<TargetPoints>();
 
 
 
@@ -14,6 +18,7 @@ public class Test : MonoBehaviour
     void Start()
     {
 
+        NextDestination();
 
     }
 
@@ -22,4 +27,30 @@ public class Test : MonoBehaviour
     {
 
     }
+
+
+
+
+    private void NextDestination()
+    {
+        int oldIndex = indexNextDestination;
+        while (oldIndex == indexNextDestination && targetPoints.Count > 1)
+        {
+            indexNextDestination++;
+            print("++" + indexNextDestination);
+
+            indexNextDestination = indexNextDestination % targetPoints.Count;
+
+            print("after modula index; " + indexNextDestination);
+
+            //indexNextDestination = Random.Range(0, targetPoints.Count);
+
+        }
+
+        actualDestination = targetPoints[indexNextDestination].GivePoint();
+        print("the actualDestination is ; " + actualDestination);
+        
+        //agent.SetDestination(actualDestination);
+    }
+
 }
