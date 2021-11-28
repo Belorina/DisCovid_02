@@ -31,10 +31,10 @@ public class Test : MonoBehaviour
 
 
 
-    private void NextDestination()
+    public void NextDestination()
     {
         int oldIndex = indexNextDestination;
-        while (oldIndex == indexNextDestination && targetPoints.Count > 1)
+        while (oldIndex == indexNextDestination)
         {
             indexNextDestination++;
             print("++" + indexNextDestination);
@@ -52,5 +52,8 @@ public class Test : MonoBehaviour
         
         //agent.SetDestination(actualDestination);
     }
+
+
+    //public void 
 
 }

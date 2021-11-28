@@ -5,11 +5,8 @@ using UnityEngine;
 // IN KILL VARIANT - condision to get all variants poped and not back in list 
 
 
-// how to make 2 instances of variant to put in two pools ?? not only right 
 
-
-
-public class Pool : MonoBehaviour
+public class Pool1 : MonoBehaviour
 {
     public List<ClientBehaviour> clientList = new List<ClientBehaviour>();
 
@@ -20,12 +17,7 @@ public class Pool : MonoBehaviour
 
     public VariantSpawnTimeline variantScript;
 
-    [SerializeField]
     private ClientBehaviour clientVariant;
-    
-    [SerializeField]
-    private GameObject clientVariantGo;
-
 
     private ClientBehaviour client;
 
@@ -76,18 +68,8 @@ public class Pool : MonoBehaviour
         }
         else
         {
-
-            if (clientVariantList.Count < 1)
-            {
-                for (int i = 0; i < 2; i++)
-                {
-                    clientVariantGo = Instantiate(clientVariantPrefab, position, rotation);
-
-                }
-            }
-
+            GameObject clientVariantGo = Instantiate(clientVariantPrefab, position, rotation);
             clientVariant = clientVariantGo.GetComponent<ClientBehaviour>();
-
             clientVariantList.Add(clientVariant);
 
         }
