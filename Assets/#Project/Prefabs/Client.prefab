@@ -150,8 +150,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: -251854830088154665}
-  pool: {fileID: 0}
+  spawner: {fileID: 0}
+  test: {fileID: 1571220319353203281, guid: a4f31075900d6f244a40bd79655e96f1, type: 3}
   indexNextDestination: 0
   actualDestination: {x: 0, y: 0, z: 0}
-  clientSpeed: 2
-  test: {fileID: 1571220319353203281, guid: a4f31075900d6f244a40bd79655e96f1, type: 3}
+  targetPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

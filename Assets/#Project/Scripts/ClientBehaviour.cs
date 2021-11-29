@@ -12,23 +12,27 @@ public class ClientBehaviour : MonoBehaviour
 
     public NavMeshAgent agent;
 
-    [SerializeField]
-    private Pool pool;
+    //public Test test;
 
-
-    //public List<TargetPoints> targetPoints = new List<TargetPoints>();
-
-
-    [SerializeField]
-    private int indexNextDestination = 0;
-
-    
-    //private Vector3 actualDestination;
-
-    public float clientSpeed = 2f;
-
-    [SerializeField]
+    public Spawner spawner;
     public Test test;
+
+
+
+
+    [SerializeField]
+    private int indexNextDestination = -1;
+
+    [SerializeField]
+    private Vector3 actualDestination;
+
+
+    public List<TargetPoints> targetPoints = new List<TargetPoints>();
+
+    private float clientSpeed = 2f;
+
+
+
 
 
 
@@ -37,24 +41,19 @@ public class ClientBehaviour : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
-        test = GetComponent<Test>();
-        
 
-
-        //targetPoints = new List<TargetPoints>();
+        spawner = gameObject.GetComponentInParent(typeof(Spawner)) as Spawner;
+        test = gameObject.GetComponentInParent(typeof(Test)) as Test;
 
 
         agent = GetComponent<NavMeshAgent>();
+        agent = spawner.client.agent;       // to determine if Left or right (?) 
+
+
         agent.autoBraking = false;
         clientSpeed = agent.speed;
 
-
-        //if (CompareTag(""))
-        
-        //test = FindObjectOfType<Test>();
-        //pool = FindObjectOfType<Pool>();
-
-        //actualDestination = test.actualDestination;
+        NextDestination();
 
 
 
@@ -65,17 +64,41 @@ public class ClientBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print("update index; " + indexNextDestination);
-
 
         if (agent.remainingDistance <= agent.stoppingDistance)
         {
-            print("I am getting close!");
-            print("I had to change now " + test.actualDestination);
-            test.NextDestination();
-            //agent.SetDestination(actualDestination);
+            NextDestination();
 
         }
 
     }
+
+
+    public void NextDestination()
+    {
+        print("I am in next destination!");
+
+
+        int oldIndex = indexNextDestination;
+        while (oldIndex == indexNextDestination && targetPoints.Count > 1)
+        {
+            indexNextDestination++;
+
+          //  indexNextDestination = indexNextDestination % targetPoints.Count;
+            
+        }
+
+        actualDestination = targetPoints[indexNextDestination].GivePoint();
+
+        print("the actualDestination is ; " + actualDestination);
+
+        agent.SetDestination(actualDestination);
+
+
+    }
+
+
+
+
+
 }

@@ -21,7 +21,7 @@ public class Pool : MonoBehaviour
     public VariantSpawnTimeline variantScript;
 
     private ClientBehaviour clientVariant;
-    
+
     private GameObject clientVariantGo;
 
 
@@ -45,6 +45,8 @@ public class Pool : MonoBehaviour
         else
         {
             GameObject clientGo = Instantiate(clientPrefab, position, rotation);
+            clientGo.transform.parent = transform;
+
             client = clientGo.GetComponent<ClientBehaviour>();
         }
         return client;
@@ -80,6 +82,8 @@ public class Pool : MonoBehaviour
                 for (int i = 0; i < 2; i++)
                 {
                     clientVariantGo = Instantiate(clientVariantPrefab, position, rotation);
+
+                    clientVariantGo.transform.parent = transform;
 
                 }
             }
