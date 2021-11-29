@@ -7,12 +7,10 @@ using UnityEngine.AI;
 public class Spawner : MonoBehaviour
 {
     public Pool pool;
+    public Test test;
     public float delay = 1f;
 
     //public Vector3 clientDestination;
-
-    
-
 
     public ClientBehaviour clientVariant;
     public ClientBehaviour client;
@@ -22,13 +20,10 @@ public class Spawner : MonoBehaviour
 
 
 
-
-
     // Start is called before the first frame update
     void Start()
     {
-        
-    
+        test = GetComponent<Test>();
 
 
         StartCoroutine(SpawnVariant());     // have to start coroutine in start method otherwhise spawn multiple at once
@@ -44,14 +39,12 @@ public class Spawner : MonoBehaviour
 
 
 
-    private IEnumerator Spawn()
+    public IEnumerator Spawn()
     {
         while (true)
         {
-            //print("spawning client create method caled");
-
             client = pool.Create(transform.position, transform.rotation);
-            //client.destination = clientDestination;
+           // client.agent.SetDestination(test.actualDestination);
 
             yield return new WaitForSeconds(delay);
         }

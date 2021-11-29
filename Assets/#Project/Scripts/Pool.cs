@@ -20,10 +20,8 @@ public class Pool : MonoBehaviour
 
     public VariantSpawnTimeline variantScript;
 
-    [SerializeField]
     private ClientBehaviour clientVariant;
     
-    [SerializeField]
     private GameObject clientVariantGo;
 
 

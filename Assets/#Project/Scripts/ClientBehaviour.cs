@@ -10,8 +10,7 @@ using UnityEngine.AI;
 public class ClientBehaviour : MonoBehaviour
 {
 
-    [SerializeField]
-    private NavMeshAgent agent;
+    public NavMeshAgent agent;
 
     [SerializeField]
     private Pool pool;
@@ -23,8 +22,8 @@ public class ClientBehaviour : MonoBehaviour
     [SerializeField]
     private int indexNextDestination = 0;
 
-    [SerializeField]
-    private Vector3 actualDestination;
+    
+    //private Vector3 actualDestination;
 
     public float clientSpeed = 2f;
 
@@ -38,6 +37,8 @@ public class ClientBehaviour : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
+        test = GetComponent<Test>();
+        
 
 
         //targetPoints = new List<TargetPoints>();
@@ -45,20 +46,15 @@ public class ClientBehaviour : MonoBehaviour
 
         agent = GetComponent<NavMeshAgent>();
         agent.autoBraking = false;
-        agent.speed = clientSpeed;
+        clientSpeed = agent.speed;
 
 
-        test = FindObjectOfType<Test>();
+        //if (CompareTag(""))
+        
+        //test = FindObjectOfType<Test>();
+        //pool = FindObjectOfType<Pool>();
 
-        //test.testTargetPoints = targetPoints;
-        test.actualDestination = actualDestination;
-
-
-
-        pool = FindObjectOfType<Pool>();
-
-        //print("start void index; " + indexNextDestination );
-        //NextDestination();
+        //actualDestination = test.actualDestination;
 
 
 
@@ -74,35 +70,12 @@ public class ClientBehaviour : MonoBehaviour
 
         if (agent.remainingDistance <= agent.stoppingDistance)
         {
-            print("go next destination now chage");
-            NextDestination();
-            agent.SetDestination(actualDestination);
+            print("I am getting close!");
+            print("I had to change now " + test.actualDestination);
+            test.NextDestination();
+            //agent.SetDestination(actualDestination);
 
         }
-
-    }
-
-    private void NextDestination()
-    {
-        // int oldIndex = indexNextDestination;
-        // while (oldIndex == indexNextDestination && targetPoints.Count > 1)
-        // {
-        //     indexNextDestination++;
-        //     print("++" + indexNextDestination);
-
-        //     indexNextDestination = indexNextDestination % targetPoints.Count;
-
-        //     print("after modula index; " + indexNextDestination);
-
-        //     //indexNextDestination = Random.Range(0, targetPoints.Count);
-
-        // }
-
-
-        // actualDestination = targetPoints[indexNextDestination].GivePoint();
-        // print("the actualDestination is ; " + actualDestination);
-
-        //agent.SetDestination(actualDestination);
 
     }
 }

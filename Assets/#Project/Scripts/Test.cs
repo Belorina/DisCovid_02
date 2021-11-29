@@ -12,14 +12,10 @@ public class Test : MonoBehaviour
     public List<TargetPoints> targetPoints = new List<TargetPoints>();
 
 
-
-
     // Start is called before the first frame update
     void Start()
     {
-
         NextDestination();
-
     }
 
     // Update is called once per frame
@@ -32,28 +28,20 @@ public class Test : MonoBehaviour
 
 
     public void NextDestination()
-    {
+    {     
+        print("I am in next destination!");
         int oldIndex = indexNextDestination;
-        while (oldIndex == indexNextDestination)
+        while (oldIndex == indexNextDestination && targetPoints.Count > 1)
         {
             indexNextDestination++;
-            print("++" + indexNextDestination);
 
             indexNextDestination = indexNextDestination % targetPoints.Count;
-
-            print("after modula index; " + indexNextDestination);
-
-            //indexNextDestination = Random.Range(0, targetPoints.Count);
 
         }
 
         actualDestination = targetPoints[indexNextDestination].GivePoint();
         print("the actualDestination is ; " + actualDestination);
         
-        //agent.SetDestination(actualDestination);
     }
-
-
-    //public void 
 
 }
