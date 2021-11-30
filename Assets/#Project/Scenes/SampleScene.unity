@@ -337,7 +337,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 303394519}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.05, y: 0, z: -2.71}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 28410786}
@@ -390,13 +390,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pool: {fileID: 303394521}
-  delay: 1
+  delay: 2
   clientVariant: {fileID: 4629689076063878868, guid: 700ba54f78837de4597585b93bfc9a3e, type: 3}
   client: {fileID: 5966806538699454084, guid: b52dde4a5a252d54989e9a9cc4d1972e, type: 3}
   targetPoints:
   - {fileID: 2017151283}
   - {fileID: 444257115}
-  - {fileID: 429747717}
 --- !u!1 &344236016
 GameObject:
   m_ObjectHideFlags: 0
@@ -1526,13 +1525,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pool: {fileID: 1745048516}
-  delay: 1
+  delay: 2
   clientVariant: {fileID: 4629689076063878868, guid: 700ba54f78837de4597585b93bfc9a3e, type: 3}
   client: {fileID: 5966806538699454084, guid: b52dde4a5a252d54989e9a9cc4d1972e, type: 3}
   targetPoints:
   - {fileID: 1961867287}
   - {fileID: 303318063}
-  - {fileID: 1637008448}
 --- !u!1 &1961867285
 GameObject:
   m_ObjectHideFlags: 0

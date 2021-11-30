@@ -84,15 +84,15 @@ public class ClientBehaviour : MonoBehaviour
         while (oldIndex == indexNextDestination && targetPoints.Count > 1)
         {
 
-            // indexNextDestination = Random.Range(0, spawner.targetPoints.Count);
-
-
-
             print("old index == indexNextDest");
             print(indexNextDestination);
 
-
             indexNextDestination++;
+
+            if (indexNextDestination == 3)
+            {
+                indexNextDestination = 0;
+            }
             print("index should be +1");
             print(indexNextDestination);
             indexNextDestination = indexNextDestination % targetPoints.Count; 
@@ -104,13 +104,7 @@ public class ClientBehaviour : MonoBehaviour
         print("the actualDestination is ; " + actualDestination);
 
         agent.SetDestination(actualDestination);        //spawner.client.
-        //agent.SetDestination(actualDestination);        // spawner.clientVariant.
-
+                                                        // spawner.clientVariant.
 
     }
-
-
-
-
-
 }
