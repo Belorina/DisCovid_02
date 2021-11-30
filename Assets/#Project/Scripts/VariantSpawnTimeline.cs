@@ -27,15 +27,15 @@ public class VariantSpawnTimeline : MonoBehaviour
 
     public bool timeCheck()
     {
-        if (conductor.songPositionInBeats >= spawnBetween && conductor.songPositionInBeats <= andBetween)
-        {
-            timeDetection = true;
 
+        if (timeDetection == true)
+        {
+            
             return true;
         }
         else
         {
-            timeDetection = false;
+           
             return false;
         }
 
@@ -45,6 +45,15 @@ public class VariantSpawnTimeline : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (conductor.songPositionInBeats >= spawnBetween && conductor.songPositionInBeats <= andBetween)
+        {
+            timeDetection = true;
+        }
+        else
+        {
+            timeDetection = false;
+        }
+
         timeCheck();
         
 

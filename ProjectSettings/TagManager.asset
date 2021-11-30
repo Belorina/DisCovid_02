@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Masked
   - Not_Masked
+  - Half_Masked
+  - Ear_Masked
   layers:
   - Default
   - TransparentFX

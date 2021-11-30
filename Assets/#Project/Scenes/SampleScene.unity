@@ -258,7 +258,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 28410785}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 28, y: 1, z: 2}
+  m_LocalPosition: {x: 28.5, y: 1, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 303394520}
@@ -337,7 +337,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 303394519}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.05, y: 0, z: -2.71}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 28410786}
@@ -375,7 +375,7 @@ MonoBehaviour:
   conductor: {fileID: 916823595}
   clientVariantSpawner: {fileID: 303394524}
   spawnBetween: 20
-  andBetween: 21
+  andBetween: 20.5
   timeDetection: 0
 --- !u!114 &303394524
 MonoBehaviour:
@@ -1186,7 +1186,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1295788645}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5, y: 1, z: 28.4}
+  m_LocalPosition: {x: -0.5, y: 1, z: 28.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1745048514}
@@ -1510,7 +1510,7 @@ MonoBehaviour:
   conductor: {fileID: 916823595}
   clientVariantSpawner: {fileID: 1745048518}
   spawnBetween: 20
-  andBetween: 21
+  andBetween: 20.5
   timeDetection: 0
 --- !u!114 &1745048518
 MonoBehaviour:
