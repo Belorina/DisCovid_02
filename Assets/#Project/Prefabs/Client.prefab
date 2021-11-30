@@ -151,7 +151,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: -251854830088154665}
   spawner: {fileID: 0}
-  indexNextDestination: 0
+  indexNextDestination: -1
   clientSpeed: 2
-  actualDestination: {x: 0, y: 0, z: 0}
   targetPoints: []

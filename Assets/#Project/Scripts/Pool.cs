@@ -45,7 +45,7 @@ public class Pool : MonoBehaviour
         else
         {
             GameObject clientGo = Instantiate(clientPrefab, position, rotation);
-            clientGo.transform.parent = transform;
+            clientGo.transform.parent = transform;      // to make it a child 
 
             client = clientGo.GetComponent<ClientBehaviour>();
         }
@@ -71,21 +71,19 @@ public class Pool : MonoBehaviour
             clientVariant = clientVariantList[0];
             clientVariant.transform.position = position;
             clientVariant.transform.rotation = rotation;
-            clientVariant.gameObject.SetActive(false);   // works because prefab is active 
-
+            clientVariant.gameObject.SetActive(false);
         }
         else
         {
-
             if (clientVariantList.Count < 1)
             {
-                for (int i = 0; i < 2; i++)
-                {
-                    clientVariantGo = Instantiate(clientVariantPrefab, position, rotation);
+                //for (int i = 0; i < 2; i++)
+                //{
+                clientVariantGo = Instantiate(clientVariantPrefab, position, rotation);
 
-                    clientVariantGo.transform.parent = transform;
+                clientVariantGo.transform.parent = transform;       // to make it a child 
 
-                }
+                //}
             }
 
             clientVariant = clientVariantGo.GetComponent<ClientBehaviour>();
@@ -112,12 +110,6 @@ public class Pool : MonoBehaviour
             clientVariant.gameObject.SetActive(true);
 
         }
-        // else
-        // {
-        //     client.gameObject.SetActive(true);
-
-        // }
-
     }
 
 

@@ -16,9 +16,6 @@ public class Spawner : MonoBehaviour
 
 
 
-    //public VariantSpawnTimeline variantScript;    // I dont use it here ? 
-
-
 
     // Start is called before the first frame update
     void Start()

@@ -10,8 +10,10 @@ public class TargetPoints : MonoBehaviour
 
     public Vector3 GivePoint()
     {
-        print("giving point");
+        //qprint("giving point");
         point = Vector3.zero;
+
+        //point = 
 
         point.z = point.y;
         point.y = 0;
