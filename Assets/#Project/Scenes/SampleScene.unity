@@ -320,7 +320,6 @@ GameObject:
   m_Component:
   - component: {fileID: 303394520}
   - component: {fileID: 303394521}
-  - component: {fileID: 303394522}
   - component: {fileID: 303394524}
   - component: {fileID: 303394523}
   m_Layer: 0
@@ -361,24 +360,6 @@ MonoBehaviour:
   clientPrefab: {fileID: 2225974840954391654, guid: b52dde4a5a252d54989e9a9cc4d1972e, type: 3}
   clientVariantPrefab: {fileID: 870864969794094134, guid: 700ba54f78837de4597585b93bfc9a3e, type: 3}
   variantScript: {fileID: 303394523}
---- !u!114 &303394522
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 303394519}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38c9a963452acfd4d9e10d3957becafd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actualDestination: {x: 0, y: 0, z: 0}
-  targetPoints:
-  - {fileID: 2017151283}
-  - {fileID: 444257115}
-  - {fileID: 429747717}
-  spawner: {fileID: 303394524}
 --- !u!114 &303394523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,11 +390,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pool: {fileID: 303394521}
-  test: {fileID: 303394522}
   delay: 1
   clientVariant: {fileID: 4629689076063878868, guid: 700ba54f78837de4597585b93bfc9a3e, type: 3}
   client: {fileID: 5966806538699454084, guid: b52dde4a5a252d54989e9a9cc4d1972e, type: 3}
-  variantScript: {fileID: 303394523}
+  targetPoints:
+  - {fileID: 2017151283}
+  - {fileID: 444257115}
+  - {fileID: 429747717}
 --- !u!1 &344236016
 GameObject:
   m_ObjectHideFlags: 0
@@ -1361,7 +1344,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1745048514}
   - component: {fileID: 1745048516}
-  - component: {fileID: 1745048515}
   - component: {fileID: 1745048518}
   - component: {fileID: 1745048517}
   m_Layer: 0
@@ -1385,24 +1367,6 @@ Transform:
   m_Father: {fileID: 1295788646}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1745048515
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1745048513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38c9a963452acfd4d9e10d3957becafd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actualDestination: {x: 0, y: 0, z: 0}
-  targetPoints:
-  - {fileID: 1961867287}
-  - {fileID: 303318063}
-  - {fileID: 1637008448}
-  spawner: {fileID: 1745048518}
 --- !u!114 &1745048516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1450,11 +1414,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pool: {fileID: 1745048516}
-  test: {fileID: 0}
   delay: 1
   clientVariant: {fileID: 4629689076063878868, guid: 700ba54f78837de4597585b93bfc9a3e, type: 3}
   client: {fileID: 5966806538699454084, guid: b52dde4a5a252d54989e9a9cc4d1972e, type: 3}
-  variantScript: {fileID: 1745048517}
+  targetPoints:
+  - {fileID: 1961867287}
+  - {fileID: 303318063}
+  - {fileID: 1637008448}
 --- !u!1 &1961867285
 GameObject:
   m_ObjectHideFlags: 0

@@ -21,12 +21,13 @@ public class ClientBehaviour : MonoBehaviour
     private int indexNextDestination = -1;
 
     [SerializeField]
+    private float clientSpeed = 2f;
+
+    [SerializeField]
     private Vector3 actualDestination;
 
-
-    public List<TargetPoints> targetPoints = new List<TargetPoints>();
-
-    private float clientSpeed = 2f;
+    [SerializeField]
+    private List<TargetPoints> targetPoints = new List<TargetPoints>();
 
 
 
@@ -41,9 +42,11 @@ public class ClientBehaviour : MonoBehaviour
 
         spawner = gameObject.GetComponentInParent(typeof(Spawner)) as Spawner;
 
+        //spawner.targetPoints = targetPoints;
+
 
         agent = GetComponent<NavMeshAgent>();
-        agent = spawner.client.agent;       // to determine if Left or right (?) 
+        agent = spawner.client.agent;       // to determine if Left or right
 
 
         agent.autoBraking = false;
@@ -80,11 +83,11 @@ public class ClientBehaviour : MonoBehaviour
         {
             indexNextDestination++;
 
-          //  indexNextDestination = indexNextDestination % targetPoints.Count;
+          //  indexNextDestination = indexNextDestination % targetPoints.Count;         // 0 - 1 - 2 re a 0 quand spawn ? 
             
         }
 
-        actualDestination = targetPoints[indexNextDestination].GivePoint();
+        actualDestination = spawner.targetPoints[indexNextDestination].GivePoint();
 
         print("the actualDestination is ; " + actualDestination);
 

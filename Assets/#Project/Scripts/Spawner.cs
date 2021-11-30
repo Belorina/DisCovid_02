@@ -9,13 +9,14 @@ public class Spawner : MonoBehaviour
     public Pool pool;
     public float delay = 1f;
 
-    //public Vector3 clientDestination;
-
     public ClientBehaviour clientVariant;
     public ClientBehaviour client;
 
+    public List<TargetPoints> targetPoints = new List<TargetPoints>();
 
-    public VariantSpawnTimeline variantScript;
+
+
+    //public VariantSpawnTimeline variantScript;    // I dont use it here ? 
 
 
 
@@ -23,13 +24,9 @@ public class Spawner : MonoBehaviour
     void Start()
     {
 
-
         StartCoroutine(SpawnVariant());     // have to start coroutine in start method otherwhise spawn multiple at once
 
         StartCoroutine(Spawn());
-
-
-
 
 
     }
@@ -42,7 +39,6 @@ public class Spawner : MonoBehaviour
         while (true)
         {
             client = pool.Create(transform.position, transform.rotation);
-           // client.agent.SetDestination(test.actualDestination);
 
             yield return new WaitForSeconds(delay);
         }
@@ -54,8 +50,6 @@ public class Spawner : MonoBehaviour
         {
             clientVariant = pool.VariantCreate(transform.position, transform.rotation);
 
-            //clientVariant.destination = clientDestination;
-
             yield return new WaitForSeconds(delay);
 
         }
@@ -65,22 +59,7 @@ public class Spawner : MonoBehaviour
 
     void Update()
     {
-        // if (variantScript.timeCheck())
-        // {
-
-        //     print("it's true!");
-
-        //     clientVariant.gameObject.SetActive(true);
-        //     print(clientVariant.gameObject.activeInHierarchy);
-
-        // }
-        // else
-        // {
-
-        //     clientVariant.gameObject.SetActive(false);
-        // }
-
-
+        
 
     }
 
