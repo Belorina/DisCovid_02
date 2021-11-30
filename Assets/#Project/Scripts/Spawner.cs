@@ -12,7 +12,8 @@ public class Spawner : MonoBehaviour
     public ClientBehaviour clientVariant;
     public ClientBehaviour client;
 
-    public List<TargetPoints> targetPoints = new List<TargetPoints>();
+    //public List<TargetPoints> targetPoints = new List<TargetPoints>();
+    public List<TargetPoints> targetPoints;
 
 
 
@@ -36,7 +37,8 @@ public class Spawner : MonoBehaviour
         while (true)
         {
             client = pool.Create(transform.position, transform.rotation);
-
+            
+            client.targetPoints = targetPoints;
             yield return new WaitForSeconds(delay);
         }
     }
@@ -46,6 +48,9 @@ public class Spawner : MonoBehaviour
         while (true)
         {
             clientVariant = pool.VariantCreate(transform.position, transform.rotation);
+
+            clientVariant.targetPoints = targetPoints;
+
 
             yield return new WaitForSeconds(delay);
 

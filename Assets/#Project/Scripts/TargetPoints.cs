@@ -27,7 +27,7 @@ public class TargetPoints : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //position = gameObject.transform.position;
+        position = gameObject.transform.position;
         //print(point);
         
     }

@@ -24,7 +24,7 @@ public class ClientBehaviour : MonoBehaviour
     private Vector3 actualDestination;
 
     [SerializeField]
-    public List<TargetPoints> targetPoints = new List<TargetPoints>();
+    public List<TargetPoints> targetPoints = new List<TargetPoints>(0);
 
 
 
@@ -45,11 +45,12 @@ public class ClientBehaviour : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
 
 
-        agent.autoBraking = false;
+        agent.autoBraking = true;       // if false then doesnt detect stopping distance ?? 
         clientSpeed = agent.speed;
+        clientSpeed = 2f;
 
         print("in start " + indexNextDestination);
-        NextDestination();
+        //NextDestination();
 
 
 
@@ -61,11 +62,17 @@ public class ClientBehaviour : MonoBehaviour
     void Update()
     {
 
-        if (spawner.client.agent.remainingDistance <= spawner.client.agent.stoppingDistance)
-        {
-            print("got close play next Destination");
-            NextDestination();
+        // if (spawner.client.agent.remainingDistance <= spawner.client.agent.stoppingDistance)
+        // {
+        //     print("got close play next Destination");
+        //     NextDestination();
 
+        // }
+
+        if (agent.remainingDistance <= agent.stoppingDistance)
+        {
+            print("got close now play nextdest again");
+            NextDestination();
         }
 
     }
@@ -74,25 +81,30 @@ public class ClientBehaviour : MonoBehaviour
     public void NextDestination()
     {
         int oldIndex = indexNextDestination;
-        while (oldIndex == indexNextDestination && spawner.targetPoints.Count > 1)
+        while (oldIndex == indexNextDestination && targetPoints.Count > 1)
         {
+
+            // indexNextDestination = Random.Range(0, spawner.targetPoints.Count);
+
+
+
             print("old index == indexNextDest");
             print(indexNextDestination);
 
-            
+
             indexNextDestination++;
             print("index should be +1");
             print(indexNextDestination);
-            indexNextDestination = indexNextDestination % spawner.targetPoints.Count; 
-            
+            indexNextDestination = indexNextDestination % targetPoints.Count; 
+
         }
 
-        actualDestination = spawner.targetPoints[indexNextDestination].GivePoint();
+        actualDestination = targetPoints[indexNextDestination].GivePoint();
 
         print("the actualDestination is ; " + actualDestination);
 
-        spawner.client.agent.SetDestination(actualDestination);
-        spawner.clientVariant.agent.SetDestination(actualDestination);
+        agent.SetDestination(actualDestination);        //spawner.client.
+        //agent.SetDestination(actualDestination);        // spawner.clientVariant.
 
 
     }
