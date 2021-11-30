@@ -7,7 +7,6 @@ using UnityEngine.AI;
 public class Spawner : MonoBehaviour
 {
     public Pool pool;
-    public Test test;
     public float delay = 1f;
 
     //public Vector3 clientDestination;
@@ -23,7 +22,6 @@ public class Spawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        test = GetComponent<Test>();
 
 
         StartCoroutine(SpawnVariant());     // have to start coroutine in start method otherwhise spawn multiple at once

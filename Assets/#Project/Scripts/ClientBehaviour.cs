@@ -15,9 +15,6 @@ public class ClientBehaviour : MonoBehaviour
     //public Test test;
 
     public Spawner spawner;
-    public Test test;
-
-
 
 
     [SerializeField]
@@ -43,7 +40,6 @@ public class ClientBehaviour : MonoBehaviour
     {
 
         spawner = gameObject.GetComponentInParent(typeof(Spawner)) as Spawner;
-        test = gameObject.GetComponentInParent(typeof(Test)) as Test;
 
 
         agent = GetComponent<NavMeshAgent>();
