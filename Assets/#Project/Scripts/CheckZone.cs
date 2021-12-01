@@ -26,16 +26,30 @@ public class CheckZone : MonoBehaviour
     {
         if (nearSecurity && Input.GetKeyUp(KeyCode.Space))
         {
-            print("Space key was released - on time- .");
+            if (!check)
+            {
+                // means it's a masked client 
+
+                // score - 
+
+                // deang sound? 
+
+                print("Space key detected on masked client");
+            }
         }
 
         if (nearSecurity && check && Input.GetKeyUp(KeyCode.Space))
         {
+            // means it's a not masked client (or hald ynwim) 
+
             // score + 
 
-            print("Space key detected! HA not masked! ");
+            // positive visual and sound? 
 
             // change targetpoint to TP2 streets 
+
+            print("Space key detected on NOT masked!");
+
         }
     }
 

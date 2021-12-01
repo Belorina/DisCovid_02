@@ -49,7 +49,7 @@ public class ClientBehaviour : MonoBehaviour
         clientSpeed = agent.speed;
         clientSpeed = 2f;
 
-        print("in start " + indexNextDestination);
+        //print("in start " + indexNextDestination);
         //NextDestination();
 
 
@@ -71,7 +71,7 @@ public class ClientBehaviour : MonoBehaviour
 
         if (agent.remainingDistance <= agent.stoppingDistance)
         {
-            print("got close now play nextdest again");
+            //print("got close now play nextdest again");
             NextDestination();
         }
 
@@ -84,8 +84,8 @@ public class ClientBehaviour : MonoBehaviour
         while (oldIndex == indexNextDestination && targetPoints.Count > 1)
         {
 
-            print("old index == indexNextDest");
-            print(indexNextDestination);
+            //print("old index == indexNextDest");
+            //print(indexNextDestination);
 
             indexNextDestination++;
 
@@ -93,15 +93,15 @@ public class ClientBehaviour : MonoBehaviour
             {
                 indexNextDestination = 0;
             }
-            print("index should be +1");
-            print(indexNextDestination);
+            //print("index should be +1");
+            //print(indexNextDestination);
             indexNextDestination = indexNextDestination % targetPoints.Count; 
 
         }
 
         actualDestination = targetPoints[indexNextDestination].GivePoint();
 
-        print("the actualDestination is ; " + actualDestination);
+        //print("the actualDestination is ; " + actualDestination);
 
         agent.SetDestination(actualDestination);        //spawner.client.
                                                         // spawner.clientVariant.

@@ -57,7 +57,7 @@ public class Pool : MonoBehaviour
 
         client.gameObject.SetActive(false);
         clientList.Add(client);
-        print("Kill");
+        //print("Kill");
 
     }
 
@@ -118,7 +118,7 @@ public class Pool : MonoBehaviour
     public void KillVariant(ClientBehaviour clientVariant)
     {
 
-        print("KillVariant");
+        //print("KillVariant");
 
         clientVariant.gameObject.SetActive(false);
         clientVariantList.Add(clientVariant);
