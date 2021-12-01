@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// near secu && not masked  - if space then plus punt (score) / if no space minus point (score)
+// near secu && masked - if space then then minus point (score) / if no space plus punt (score)
+
 public class CheckZone : MonoBehaviour
 {
     private bool nearSecurity;
@@ -41,12 +44,12 @@ public class CheckZone : MonoBehaviour
         if (!other.gameObject.CompareTag("Masked"))
         {
             nearSecurity = true;
-            check = false;
+            check = true;
         }
         else
         {
-            nearSecurity = false;
-            check = true;
+            nearSecurity = true ;
+            check = false;
         }
 
         // score ? 
