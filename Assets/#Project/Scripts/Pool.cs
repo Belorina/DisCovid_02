@@ -95,7 +95,7 @@ public class Pool : MonoBehaviour
     }
 
 
-    public void ShowVariant()
+    public void ShowVariant()       // showVariant on left pool / spawner or right pool/spawner 
     {
         if (variantScript.timeCheck())      // show Variant if time is true 
         {

@@ -266,8 +266,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33c0dd8cdbba98a46ae5db11bf837c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bias: 25
-  timeStep: 0.15
+  bias: 30
+  timeStep: 0.4
   timeToBeat: 0.05
   restSmoothTime: 2
   beatScale: {x: 2, y: 2, z: 2}
