@@ -297,6 +297,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e136a23fe870c7741afe1d0e0d1db96b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nearSecurity: 0
+  check: 0
+  score: 0
+  keyCodes: 276
+  keyPressed: 0
+  spacePressed: 0
+  changeDest: 0
 --- !u!65 &185181050
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -368,7 +375,7 @@ Transform:
   m_GameObject: {fileID: 185181048}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.5, y: 0, z: -25.5}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 1745048514}
   m_RootOrder: 0
@@ -505,6 +512,7 @@ MonoBehaviour:
   targetPoints:
   - {fileID: 2017151283}
   - {fileID: 444257115}
+  - {fileID: 429747717}
 --- !u!1 &344236016
 GameObject:
   m_ObjectHideFlags: 0
@@ -691,7 +699,7 @@ Transform:
   m_GameObject: {fileID: 561758237}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -25.5, y: 0, z: 1.5}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 303394520}
   m_RootOrder: 0
@@ -708,6 +716,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e136a23fe870c7741afe1d0e0d1db96b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nearSecurity: 0
+  check: 0
+  score: 0
+  keyCodes: 275
+  keyPressed: 0
+  spacePressed: 0
+  changeDest: 0
 --- !u!65 &561758240
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1657,7 +1672,7 @@ Transform:
   m_GameObject: {fileID: 1648170789}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8, y: 0, z: 8}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 8, y: 5, z: 8}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -1749,6 +1764,7 @@ MonoBehaviour:
   targetPoints:
   - {fileID: 1961867287}
   - {fileID: 303318063}
+  - {fileID: 1637008448}
 --- !u!1 &1758365976
 GameObject:
   m_ObjectHideFlags: 0

@@ -23,10 +23,12 @@ public class ClientBehaviour : MonoBehaviour
     [SerializeField]
     private float clientSpeed = 2f;
 
-    private Vector3 actualDestination;
+    public Vector3 actualDestination;
 
     [SerializeField]
     public List<TargetPoints> targetPoints = new List<TargetPoints>(0);
+
+    //public ClientBehaviour clientVariant;
 
 
 
@@ -40,7 +42,8 @@ public class ClientBehaviour : MonoBehaviour
     {
 
         //spawner = gameObject.GetComponentInParent(typeof(Spawner)) as Spawner;
-        checkZone = transform.parent.GetComponentInChildren(typeof(CheckZone)) as CheckZone;
+        //checkZone = transform.parent.GetComponentInChildren(typeof(CheckZone)) as CheckZone;
+        
 
         //agent = spawner.client.agent;       // to determine if Left or right
 
@@ -52,11 +55,7 @@ public class ClientBehaviour : MonoBehaviour
         clientSpeed = agent.speed;
         clientSpeed = 2f;
 
-        //print("in start " + indexNextDestination);
-        //NextDestination();
-
-
-
+    
     }
 
 
@@ -72,22 +71,17 @@ public class ClientBehaviour : MonoBehaviour
 
         // }
 
-        if (checkZone.changeDest)
-        {
-            indexNextDestination = 2;
-        }
-        // else
-        // {
-        //     indexNextDestination = 1;
-        // }
 
         if (agent.remainingDistance <= agent.stoppingDistance)
         {
-            //print("got close now play nextdest again");
             NextDestination();
         }
 
 
+        // if (checkZone.changeDest)
+        // {
+        //     indexNextDestination = 2;
+        // }
 
     }
 
@@ -103,7 +97,7 @@ public class ClientBehaviour : MonoBehaviour
 
             indexNextDestination++;
 
-            if (indexNextDestination == 3)
+            if (indexNextDestination == 2)
             {
                 indexNextDestination = 0;
             }

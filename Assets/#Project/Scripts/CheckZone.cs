@@ -20,9 +20,13 @@ public class CheckZone : MonoBehaviour
 
     public bool spacePressed;
 
-    public bool changeDest;
+    //public bool changeDest;
 
-    //public ClientBehaviour VariantClient;
+    public ClientBehaviour clientVariant;
+
+    public List<TargetPoints> targetPoints;
+
+    public Spawner spawner;
 
 
 
@@ -32,7 +36,10 @@ public class CheckZone : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //VariantClient = GetComponentInChildren(typeof(ClientBehaviour)) as ClientBehaviour;
+        spawner = GetComponentInParent(typeof(Spawner)) as Spawner;
+
+        targetPoints = spawner.targetPoints;
+        
 
     }
 
@@ -51,7 +58,7 @@ public class CheckZone : MonoBehaviour
             keyPressed = false;
         }
 
-        //print(keyPressed);
+
 
 
         if (nearSecurity && check && spacePressed && keyPressed)
@@ -63,16 +70,13 @@ public class CheckZone : MonoBehaviour
             // positive visual and sound? 
 
             // tell Vclient to change targetpoint to TP2 streets 
-            changeDest = true;
+    
+            clientVariant.targetPoints = targetPoints;
+            clientVariant.actualDestination = targetPoints[2].GivePoint();
+            clientVariant.agent.SetDestination(clientVariant.actualDestination);
 
             print("Not masked caught! ");
-
         }
-        // else
-        // {
-        //     changeDest = false;
-        // }
-
 
 
         if (nearSecurity && !check && spacePressed && keyPressed)
@@ -92,12 +96,15 @@ public class CheckZone : MonoBehaviour
     {
         nearSecurity = true;
 
-        //while (other.gameObject.CompareTag("Not_Masked"))
-        //{
-        //    check = true;
-        //}
-        //check = other.gameObject.CompareTag("Masked");
-        
+        check = !other.gameObject.CompareTag("Masked");
+
+        if (check)
+        {
+            clientVariant = other.gameObject.GetComponent<ClientBehaviour>();
+
+        }
+
+
     }
 
     private void OnTriggerExit(Collider other)
@@ -114,7 +121,7 @@ public class CheckZone : MonoBehaviour
     void OnDrawGizmos()
     {
         Gizmos.color = new Color(0, 1, 0, 0.2f);
-        Gizmos.DrawCube(transform.position, new Vector3(4f, 4f, 4f));
+        Gizmos.DrawCube(transform.position, new Vector3(2f, 2f, 2f));
     }
 
 
