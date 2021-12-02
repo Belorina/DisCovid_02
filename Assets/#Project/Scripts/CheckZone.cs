@@ -80,7 +80,7 @@ public class CheckZone : MonoBehaviour
     void OnDrawGizmos()
     {
         Gizmos.color = new Color(0, 1, 0, 0.2f);
-        Gizmos.DrawCube(transform.position, new Vector3(4f, 4f, 4f));
+        Gizmos.DrawCube(transform.position, new Vector3(3f, 3f, 3f));
     }
 
 
