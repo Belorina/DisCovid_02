@@ -27,12 +27,6 @@ public class ClientBehaviour : MonoBehaviour
     public List<TargetPoints> targetPoints = new List<TargetPoints>(0);
 
 
-
-
-
-
-
-
     // Start is called before the first frame update
     public void Start()
     {

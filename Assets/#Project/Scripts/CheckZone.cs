@@ -11,13 +11,17 @@ public class CheckZone : MonoBehaviour
 
     private bool check;
 
-    //public int score; 
+    //public int score;
+
+    public Spawner spawner;
+
 
 
 
     // Start is called before the first frame update
     void Start()
     {
+        spawner = FindGameObjectsOfType<Spawner>();
 
     }
 
@@ -48,6 +52,7 @@ public class CheckZone : MonoBehaviour
 
             // change targetpoint to TP2 streets 
 
+
             print("Space key detected on NOT masked!");
 
         }
@@ -62,14 +67,14 @@ public class CheckZone : MonoBehaviour
         }
         else
         {
-            nearSecurity = true ;
+            nearSecurity = true;
             check = false;
         }
 
         // score ? 
     }
 
-    private void OnTriggerExit (Collider other)
+    private void OnTriggerExit(Collider other)
     {
         if (!other.gameObject.CompareTag("Masked"))
         {
