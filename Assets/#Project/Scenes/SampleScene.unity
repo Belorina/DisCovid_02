@@ -426,13 +426,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawn_Left: 1
-  spawn_right: 0
+  spawn_right: 1
   l_Stuff: {fileID: 1745048513}
   r_Stuff: {fileID: 303394519}
   l_Pool: {fileID: 1745048516}
   r_Pool: {fileID: 303394521}
   l_Transform: {fileID: 1745048514}
   r_Transform: {fileID: 303394520}
+  variantScriptTimeStamp: {fileID: 1879434488}
 --- !u!1 &303318061
 GameObject:
   m_ObjectHideFlags: 0
@@ -528,6 +529,7 @@ MonoBehaviour:
   clientPrefab: {fileID: 2225974840954391654, guid: b52dde4a5a252d54989e9a9cc4d1972e, type: 3}
   clientVariantPrefab: {fileID: 870864969794094134, guid: 700ba54f78837de4597585b93bfc9a3e, type: 3}
   variantScriptTimeStamp: {fileID: 1879434488}
+  clientVariant: {fileID: 0}
   clientVariantGo: {fileID: 0}
 --- !u!114 &303394524
 MonoBehaviour:
@@ -1765,6 +1767,7 @@ MonoBehaviour:
   clientPrefab: {fileID: 2225974840954391654, guid: b52dde4a5a252d54989e9a9cc4d1972e, type: 3}
   clientVariantPrefab: {fileID: 870864969794094134, guid: 700ba54f78837de4597585b93bfc9a3e, type: 3}
   variantScriptTimeStamp: {fileID: 1879434488}
+  clientVariant: {fileID: 0}
   clientVariantGo: {fileID: 0}
 --- !u!114 &1745048518
 MonoBehaviour:
