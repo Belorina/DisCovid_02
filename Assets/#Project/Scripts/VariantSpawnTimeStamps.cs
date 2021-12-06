@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VariantSpawnEdit : MonoBehaviour
+public class VariantSpawnTimeStamps : MonoBehaviour
 {
     public Conductor conductor;
 
-    public Spawner clientVariantSpawner;
+    //public Spawner clientVariantSpawner;
 
     public float spawnBetween = 20f;
 
@@ -14,7 +14,8 @@ public class VariantSpawnEdit : MonoBehaviour
 
     public bool timeDetection;
 
-    
+    // make timestamps
+
 
 
 
@@ -22,7 +23,7 @@ public class VariantSpawnEdit : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-
+    
     }
 
     public bool timeCheck()
@@ -30,12 +31,12 @@ public class VariantSpawnEdit : MonoBehaviour
 
         if (timeDetection == true)
         {
-            
+
             return true;
         }
         else
         {
-           
+
             return false;
         }
 
@@ -55,7 +56,7 @@ public class VariantSpawnEdit : MonoBehaviour
         }
 
         timeCheck();
-        
+
 
     }
 

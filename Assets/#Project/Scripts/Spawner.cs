@@ -15,8 +15,9 @@ public class Spawner : MonoBehaviour
     public ClientBehaviour clientVariant;
     public ClientBehaviour client;
 
-    //public List<TargetPoints> targetPoints = new List<TargetPoints>();
     public List<TargetPoints> targetPoints;
+
+
 
 
 
@@ -24,7 +25,6 @@ public class Spawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         StartCoroutine(SpawnVariant());     // have to start coroutine in start method otherwhise spawn multiple at once
 
         StartCoroutine(Spawn());
@@ -48,6 +48,7 @@ public class Spawner : MonoBehaviour
 
     public IEnumerator SpawnVariant()
     {
+
         while (true)
         {
             clientVariant = pool.VariantCreate(transform.position, transform.rotation);

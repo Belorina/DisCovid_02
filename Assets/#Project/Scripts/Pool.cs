@@ -18,11 +18,11 @@ public class Pool : MonoBehaviour
     public GameObject clientPrefab;
     public GameObject clientVariantPrefab;
 
-    public VariantSpawnEdit variantScript;
+    public VariantSpawnTimeStamps variantScriptTimeStamp;
 
     private ClientBehaviour clientVariant;
 
-    private GameObject clientVariantGo;
+    public GameObject clientVariantGo;
 
 
     private ClientBehaviour client;
@@ -66,10 +66,12 @@ public class Pool : MonoBehaviour
     {
         clientVariant = null;
 
+
+
         if (clientVariantList.Count > 0)
         {
             clientVariant = clientVariantList[0];
-            clientVariant.transform.position = position;            // HERE !! 
+            clientVariant.transform.position = position;
             clientVariant.transform.rotation = rotation;
             clientVariant.gameObject.SetActive(false);
         }
@@ -77,13 +79,9 @@ public class Pool : MonoBehaviour
         {
             if (clientVariantList.Count < 1)
             {
-                //for (int i = 0; i < 2; i++)
-                //{
                 clientVariantGo = Instantiate(clientVariantPrefab, position, rotation);
 
-                clientVariantGo.transform.parent = transform;       // to make it a child 
-
-                //}
+                //clientVariantGo.transform.parent = transform;       // to make it a child 
             }
 
             clientVariant = clientVariantGo.GetComponent<ClientBehaviour>();
@@ -97,7 +95,7 @@ public class Pool : MonoBehaviour
 
     public void ShowVariant()       // showVariant on left pool / spawner or right pool/spawner 
     {
-        if (variantScript.timeCheck())      // show Variant if time is true 
+        if (variantScriptTimeStamp.timeCheck())      // show Variant if time is true 
         {
             if (clientVariantList.Count > 0)
             {
@@ -105,7 +103,7 @@ public class Pool : MonoBehaviour
 
             }
 
-            //client.gameObject.SetActive(false);       Try to pause spawning of client
+
 
             clientVariant.gameObject.SetActive(true);
 
