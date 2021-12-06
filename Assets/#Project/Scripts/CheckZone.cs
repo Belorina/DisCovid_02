@@ -100,12 +100,9 @@ public class CheckZone : MonoBehaviour
         if (check)
         {
             nearSecurity = true;
-            check = false;
             clientVariant = other.gameObject.GetComponent<ClientBehaviour>();
-
+            //check = false;
         }
-
-
     }
 
     private void OnTriggerExit(Collider other)
