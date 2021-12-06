@@ -7,85 +7,142 @@ using UnityEngine;
 
 public class CheckZone : MonoBehaviour
 {
-    private bool nearSecurity;
+    public bool nearSecurity;
 
-    private bool check;
+    public bool check;
 
+
+    public int score;
+
+    public KeyCode keyCodes;
+
+    public bool keyPressed;
+
+    public bool spacePressed;
+
+    //public bool changeDest;
+
+    public ClientBehaviour clientVariant;
+
+    public List<TargetPoints> targetPoints;
+
+    public Spawner spawner;
+
+
+
+<<<<<<< HEAD
     //public int score;
 
     public Spawner spawner;
 
+=======
+>>>>>>> origin/master
 
 
 
     // Start is called before the first frame update
     void Start()
     {
+<<<<<<< HEAD
         spawner = FindGameObjectsOfType<Spawner>();
+=======
+        spawner = GetComponentInParent(typeof(Spawner)) as Spawner;
+
+        targetPoints = spawner.targetPoints;
+        
+>>>>>>> origin/master
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (nearSecurity && Input.GetKeyUp(KeyCode.Space))
+
+        spacePressed = Input.GetKeyUp(KeyCode.Space);
+
+        if (Input.GetKeyDown(keyCodes))
         {
-            if (!check)
-            {
-                // means it's a masked client 
-
-                // score - 
-
-                // deang sound? 
-
-                print("Space key detected on masked client");
-            }
+            keyPressed = true;
+        }
+        if (Input.GetKeyUp(keyCodes))
+        {
+            keyPressed = false;
         }
 
-        if (nearSecurity && check && Input.GetKeyUp(KeyCode.Space))
-        {
-            // means it's a not masked client (or hald ynwim) 
 
-            // score + 
+
+
+        if (nearSecurity && check && spacePressed && keyPressed)
+        {
+            // not masked client near security, space and arrow pressed 
+
+            score++;
 
             // positive visual and sound? 
 
-            // change targetpoint to TP2 streets 
+            // tell Vclient to change targetpoint to TP2 streets 
+    
+            clientVariant.targetPoints = targetPoints;
+            clientVariant.actualDestination = targetPoints[2].GivePoint();
+            clientVariant.agent.SetDestination(clientVariant.actualDestination);
 
+            print("Not masked caught! ");
+        }
+
+
+        if (nearSecurity && !check && spacePressed && keyPressed)
+        {
+            // masked client near security, space and arrow pressed
+
+            score--;
+
+<<<<<<< HEAD
 
             print("Space key detected on NOT masked!");
+=======
+            // shake secu ? as negative reponse? 
+>>>>>>> origin/master
 
+            print("Oops he is masked");
         }
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.gameObject.CompareTag("Masked"))
+        nearSecurity = true;
+
+        check = !other.gameObject.CompareTag("Masked");
+
+        if (check)
         {
-            nearSecurity = true;
-            check = true;
-        }
-        else
-        {
+<<<<<<< HEAD
             nearSecurity = true;
             check = false;
+=======
+            clientVariant = other.gameObject.GetComponent<ClientBehaviour>();
+
+>>>>>>> origin/master
         }
 
-        // score ? 
+
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (!other.gameObject.CompareTag("Masked"))
-        {
-            nearSecurity = false;
-        }
+
+        nearSecurity = false;
+        //check = false;
+
     }
+
+
+
 
     void OnDrawGizmos()
     {
         Gizmos.color = new Color(0, 1, 0, 0.2f);
-        Gizmos.DrawCube(transform.position, new Vector3(4f, 4f, 4f));
+        Gizmos.DrawCube(transform.position, new Vector3(2f, 2f, 2f));
     }
 
 

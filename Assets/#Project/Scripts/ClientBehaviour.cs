@@ -12,26 +12,32 @@ public class ClientBehaviour : MonoBehaviour
 
     public NavMeshAgent agent;
 
-    public Spawner spawner;
+    // public Spawner spawner;
+
+    public CheckZone checkZone; 
 
 
-    [SerializeField]
-    private int indexNextDestination = -1;
+    
+    public int indexNextDestination = -1;
 
     [SerializeField]
     private float clientSpeed = 2f;
 
-    private Vector3 actualDestination;
+    public Vector3 actualDestination;
 
     [SerializeField]
     public List<TargetPoints> targetPoints = new List<TargetPoints>(0);
+
+    //public ClientBehaviour clientVariant;
 
 
     // Start is called before the first frame update
     public void Start()
     {
 
-        spawner = gameObject.GetComponentInParent(typeof(Spawner)) as Spawner;
+        //spawner = gameObject.GetComponentInParent(typeof(Spawner)) as Spawner;
+        //checkZone = transform.parent.GetComponentInChildren(typeof(CheckZone)) as CheckZone;
+        
 
         //agent = spawner.client.agent;       // to determine if Left or right
 
@@ -43,11 +49,7 @@ public class ClientBehaviour : MonoBehaviour
         clientSpeed = agent.speed;
         clientSpeed = 2f;
 
-        //print("in start " + indexNextDestination);
-        //NextDestination();
-
-
-
+    
     }
 
 
@@ -63,11 +65,17 @@ public class ClientBehaviour : MonoBehaviour
 
         // }
 
+
         if (agent.remainingDistance <= agent.stoppingDistance)
         {
-            //print("got close now play nextdest again");
             NextDestination();
         }
+
+
+        // if (checkZone.changeDest)
+        // {
+        //     indexNextDestination = 2;
+        // }
 
     }
 
@@ -83,7 +91,7 @@ public class ClientBehaviour : MonoBehaviour
 
             indexNextDestination++;
 
-            if (indexNextDestination == 3)
+            if (indexNextDestination == 2)
             {
                 indexNextDestination = 0;
             }

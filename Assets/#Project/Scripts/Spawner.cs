@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.AI;
 
 
+// how to determine left or right spawn for variant 
+
+
 public class Spawner : MonoBehaviour
 {
     public Pool pool;

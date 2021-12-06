@@ -8,6 +8,8 @@ TagManager:
   - Not_Masked
   - Half_Masked
   - Ear_Masked
+  - Left_CheckZone
+  - Right_CheckZone
   layers:
   - Default
   - TransparentFX
