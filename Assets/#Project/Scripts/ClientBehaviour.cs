@@ -14,10 +14,10 @@ public class ClientBehaviour : MonoBehaviour
 
     // public Spawner spawner;
 
-    public CheckZone checkZone; 
+    //public CheckZone checkZone;
 
 
-    
+
     public int indexNextDestination = -1;
 
     [SerializeField]
@@ -37,7 +37,7 @@ public class ClientBehaviour : MonoBehaviour
 
         //spawner = gameObject.GetComponentInParent(typeof(Spawner)) as Spawner;
         //checkZone = transform.parent.GetComponentInChildren(typeof(CheckZone)) as CheckZone;
-        
+
 
         //agent = spawner.client.agent;       // to determine if Left or right
 
@@ -49,7 +49,7 @@ public class ClientBehaviour : MonoBehaviour
         clientSpeed = agent.speed;
         clientSpeed = 2f;
 
-    
+
     }
 
 
@@ -57,14 +57,6 @@ public class ClientBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        // if (spawner.client.agent.remainingDistance <= spawner.client.agent.stoppingDistance)
-        // {
-        //     print("got close play next Destination");
-        //     NextDestination();
-
-        // }
-
 
         if (agent.remainingDistance <= agent.stoppingDistance)
         {
@@ -83,30 +75,22 @@ public class ClientBehaviour : MonoBehaviour
     public void NextDestination()
     {
         int oldIndex = indexNextDestination;
+
         while (oldIndex == indexNextDestination && targetPoints.Count > 1)
         {
-
-            //print("old index == indexNextDest");
-            //print(indexNextDestination);
-
             indexNextDestination++;
 
             if (indexNextDestination == 2)
             {
                 indexNextDestination = 0;
             }
-            //print("index should be +1");
-            //print(indexNextDestination);
-            indexNextDestination = indexNextDestination % targetPoints.Count; 
+
+            indexNextDestination = indexNextDestination % targetPoints.Count;
 
         }
 
         actualDestination = targetPoints[indexNextDestination].GivePoint();
 
-        //print("the actualDestination is ; " + actualDestination);
-
-        agent.SetDestination(actualDestination);        //spawner.client.
-                                                        // spawner.clientVariant.
-
+        agent.SetDestination(actualDestination);
     }
 }

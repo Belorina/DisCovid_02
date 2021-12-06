@@ -20,7 +20,6 @@ public class CheckZone : MonoBehaviour
 
     public bool spacePressed;
 
-    //public bool changeDest;
 
     public ClientBehaviour clientVariant;
 
@@ -30,27 +29,15 @@ public class CheckZone : MonoBehaviour
 
 
 
-<<<<<<< HEAD
-    //public int score;
-
-    public Spawner spawner;
-
-=======
->>>>>>> origin/master
-
-
-
     // Start is called before the first frame update
     void Start()
     {
-<<<<<<< HEAD
-        spawner = FindGameObjectsOfType<Spawner>();
-=======
+
         spawner = GetComponentInParent(typeof(Spawner)) as Spawner;
 
         targetPoints = spawner.targetPoints;
         
->>>>>>> origin/master
+
 
     }
 
@@ -71,7 +58,7 @@ public class CheckZone : MonoBehaviour
 
 
 
-
+// Not_Masked
         if (nearSecurity && check && spacePressed && keyPressed)
         {
             // not masked client near security, space and arrow pressed 
@@ -89,19 +76,15 @@ public class CheckZone : MonoBehaviour
             print("Not masked caught! ");
         }
 
-
+// Masked
         if (nearSecurity && !check && spacePressed && keyPressed)
         {
             // masked client near security, space and arrow pressed
 
             score--;
 
-<<<<<<< HEAD
-
-            print("Space key detected on NOT masked!");
-=======
             // shake secu ? as negative reponse? 
->>>>>>> origin/master
+
 
             print("Oops he is masked");
         }
@@ -116,13 +99,10 @@ public class CheckZone : MonoBehaviour
 
         if (check)
         {
-<<<<<<< HEAD
             nearSecurity = true;
             check = false;
-=======
             clientVariant = other.gameObject.GetComponent<ClientBehaviour>();
 
->>>>>>> origin/master
         }
 
 
