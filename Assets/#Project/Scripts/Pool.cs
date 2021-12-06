@@ -20,7 +20,7 @@ public class Pool : MonoBehaviour
 
     public VariantSpawnTimeStamps variantScriptTimeStamp;
 
-    private ClientBehaviour clientVariant;
+    public ClientBehaviour clientVariant;
 
     public GameObject clientVariantGo;
 
@@ -93,22 +93,22 @@ public class Pool : MonoBehaviour
     }
 
 
-    public void ShowVariant()       // showVariant on left pool / spawner or right pool/spawner 
-    {
-        if (variantScriptTimeStamp.timeCheck())      // show Variant if time is true 
-        {
-            if (clientVariantList.Count > 0)
-            {
-                clientVariantList.RemoveAt(0);
+    // public void ShowVariant()       // showVariant on left pool / spawner or right pool/spawner 
+    // {
+    //     if (variantScriptTimeStamp.timeCheck())      // show Variant if time is true 
+    //     {
+    //         if (clientVariantList.Count > 0)
+    //         {
+    //             clientVariantList.RemoveAt(0);
 
-            }
+    //         }
 
 
 
-            clientVariant.gameObject.SetActive(true);
+    //         clientVariant.gameObject.SetActive(true);
 
-        }
-    }
+    //     }
+    // }
 
 
 
@@ -123,10 +123,10 @@ public class Pool : MonoBehaviour
     }
 
 
-    void Update()
-    {
-        ShowVariant();
-    }
+    // void Update()
+    // {
+    //     ShowVariant();
+    // }
 
     // public void OnDrawGizmos()
     // {
