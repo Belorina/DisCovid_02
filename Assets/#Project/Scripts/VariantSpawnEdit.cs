@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VariantSpawnTimeline : MonoBehaviour
+public class VariantSpawnEdit : MonoBehaviour
 {
     public Conductor conductor;
 

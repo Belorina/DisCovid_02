@@ -18,7 +18,7 @@ public class Pool : MonoBehaviour
     public GameObject clientPrefab;
     public GameObject clientVariantPrefab;
 
-    public VariantSpawnTimeline variantScript;
+    public VariantSpawnEdit variantScript;
 
     private ClientBehaviour clientVariant;
 
@@ -69,7 +69,7 @@ public class Pool : MonoBehaviour
         if (clientVariantList.Count > 0)
         {
             clientVariant = clientVariantList[0];
-            clientVariant.transform.position = position;
+            clientVariant.transform.position = position;            // HERE !! 
             clientVariant.transform.rotation = rotation;
             clientVariant.gameObject.SetActive(false);
         }
