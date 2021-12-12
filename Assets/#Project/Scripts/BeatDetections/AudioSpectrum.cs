@@ -8,9 +8,6 @@ using UnityEngine;
 /// </summary>
 
 
-
-
-
 public class AudioSpectrum : MonoBehaviour {
 
     // This value served to AudioSyncer for beat extraction

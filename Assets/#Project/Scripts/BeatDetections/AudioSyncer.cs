@@ -6,11 +6,13 @@ using UnityEngine;
 /// Parent class responsible for extracting beats from..
 /// ..spectrum value given by AudioSpectrum.cs
 /// </summary>
+
 public class AudioSyncer : MonoBehaviour {
 
 	/// <summary>
 	/// Inherit this to cause some behavior on each beat
 	/// </summary>
+
 	public virtual void OnBeat()
 	{
 		Debug.Log("beat");
@@ -23,6 +25,7 @@ public class AudioSyncer : MonoBehaviour {
 	/// Typically, this is used to arrive at some rest state..
 	/// ..defined by the child class
 	/// </summary>
+	
 	public virtual void OnUpdate()
 	{ 
 		// update audio value
