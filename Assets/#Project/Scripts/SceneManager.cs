@@ -5,8 +5,8 @@ using UnityEngine;
 public class SceneManager : MonoBehaviour
 {
 
-    public bool spawn_Left;
-    public bool spawn_right;
+    // public bool spawn_Left;
+    // public bool spawn_right;
 
     public GameObject l_Stuff;
     public GameObject r_Stuff;
@@ -17,7 +17,10 @@ public class SceneManager : MonoBehaviour
     public Transform l_Transform;
     public Transform r_Transform;
 
-    public VariantSpawnTimeStamps variantScriptTimeStamp;
+    //public VariantSpawnTimeStamps variantScriptTimeStamp;
+    public AudioSyncVariantSpawn_Left audioSyncVariantSpawn_Left;
+    public AudioSyncVariantSpawn_Right audioSyncVariantSpawn_Right;
+
 
     private ClientBehaviour clientVariant;
     private List<ClientBehaviour> clientVariantList;
@@ -37,8 +40,11 @@ public class SceneManager : MonoBehaviour
         l_Transform = l_Stuff.transform;
         r_Transform = r_Stuff.transform;
 
-        variantScriptTimeStamp = FindObjectOfType<VariantSpawnTimeStamps>() as VariantSpawnTimeStamps;
+        //variantScriptTimeStamp = FindObjectOfType<VariantSpawnTimeStamps>() as VariantSpawnTimeStamps;
 
+        audioSyncVariantSpawn_Left = FindObjectOfType<AudioSyncVariantSpawn_Left>() as AudioSyncVariantSpawn_Left;
+
+        audioSyncVariantSpawn_Right = FindObjectOfType<AudioSyncVariantSpawn_Right>() as AudioSyncVariantSpawn_Right;
 
 
     }
@@ -46,7 +52,8 @@ public class SceneManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (spawn_Left)
+        if (audioSyncVariantSpawn_Left.left_isOnBeat)
+        //if (spawn_Left)
         {
             l_Pool.clientVariantGo.transform.parent = l_Transform;
 
@@ -55,8 +62,10 @@ public class SceneManager : MonoBehaviour
 
             ShowVariant();
         }
+        //audioSyncVariantSpawn_Left.left_isOnBeat = false;
 
-        if (spawn_right)
+        if (audioSyncVariantSpawn_Right.right_isOnBeat)
+        //if (spawn_right)
         {
             r_Pool.clientVariantGo.transform.parent = r_Transform;
 
@@ -69,18 +78,19 @@ public class SceneManager : MonoBehaviour
     }
 
 
-    public void ShowVariant() 
+    public void ShowVariant()
     {
-        if (variantScriptTimeStamp.timeCheck())      // show Variant if time is true 
+        //if (variantScriptTimeStamp.timeCheck())
+        //show Variant if time is true 
+        //{
+        if (clientVariantList.Count > 0)
         {
-            if (clientVariantList.Count > 0)
-            {
-                clientVariantList.RemoveAt(0);
-
-            }
-
-            clientVariant.gameObject.SetActive(true);
+            clientVariantList.RemoveAt(0);
 
         }
+
+        clientVariant.gameObject.SetActive(true);
+
+        //}
     }
 }
