@@ -62,7 +62,7 @@ public class SceneManager : MonoBehaviour
 
             ShowVariant();
         }
-        //audioSyncVariantSpawn_Left.left_isOnBeat = false;
+        audioSyncVariantSpawn_Left.SetFalse();
 
         if (audioSyncVariantSpawn_Right.right_isOnBeat)
         //if (spawn_right)
@@ -74,6 +74,7 @@ public class SceneManager : MonoBehaviour
 
             ShowVariant();
         }
+        audioSyncVariantSpawn_Right.SetFalse();
 
     }
 

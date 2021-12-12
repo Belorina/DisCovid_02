@@ -43,6 +43,7 @@ public class Spawner : MonoBehaviour
             client = pool.Create(transform.position, transform.rotation);
             
             client.targetPoints = targetPoints;
+            
             yield return new WaitForSeconds(delay);
         }
     }

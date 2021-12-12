@@ -7,14 +7,20 @@ using UnityEngine;
 public class AudioSyncVariantSpawn_Left : AudioSyncer
 {
 
+	public void SetFalse()
+	{
+		m_isBeat = false;
+	}
+
     public override void OnUpdate()
     {
         base.OnUpdate();
 
         if (m_isBeat) return;
 
+		left_isOnBeat = false;
 
-		print("m_isBeat is false");
+
     
 
     }
@@ -25,10 +31,9 @@ public class AudioSyncVariantSpawn_Left : AudioSyncer
         base.OnBeat();
         left_isOnBeat = true;
 
-        print("beat detected by me");
     }
 
-	
+
     public bool left_isOnBeat;
 
 }

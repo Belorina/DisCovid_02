@@ -25,7 +25,7 @@ public class AudioSyncer : MonoBehaviour {
 	/// Typically, this is used to arrive at some rest state..
 	/// ..defined by the child class
 	/// </summary>
-	
+
 	public virtual void OnUpdate()
 	{ 
 		// update audio value
@@ -62,6 +62,8 @@ public class AudioSyncer : MonoBehaviour {
 	public float timeStep;
 	public float timeToBeat;
 	public float restSmoothTime;
+
+	// respecter la distance ( 1 sec.)  --> pinky !spawn < 0;
 
 	private float m_previousAudioValue;
 	private float m_audioValue;

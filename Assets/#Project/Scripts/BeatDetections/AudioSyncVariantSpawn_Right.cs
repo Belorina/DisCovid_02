@@ -4,18 +4,22 @@ using UnityEngine;
 
 // ShowVariant on beat - right pool 
 
-public class AudioSyncVariantSpawn_Right: AudioSyncer
+public class AudioSyncVariantSpawn_Right : AudioSyncer
 {
 
+    public void SetFalse()
+    {
+        m_isBeat = false;
+    }
     public override void OnUpdate()
     {
         base.OnUpdate();
 
         if (m_isBeat) return;
 
+        right_isOnBeat = false;
 
-		print("m_isBeat is false");
-    
+
 
     }
 
@@ -28,7 +32,7 @@ public class AudioSyncVariantSpawn_Right: AudioSyncer
         print("beat detected by me");
     }
 
-	
+
     public bool right_isOnBeat;
 
 }
