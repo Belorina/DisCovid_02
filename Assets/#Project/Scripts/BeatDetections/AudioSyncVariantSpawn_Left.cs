@@ -7,10 +7,12 @@ using UnityEngine;
 public class AudioSyncVariantSpawn_Left : AudioSyncer
 {
 
-	public void SetFalse()
-	{
-		m_isBeat = false;
-	}
+
+
+    public void SetFalse()
+    {
+        m_isBeat = false;
+    }
 
     public override void OnUpdate()
     {
@@ -18,10 +20,18 @@ public class AudioSyncVariantSpawn_Left : AudioSyncer
 
         if (m_isBeat) return;
 
-		left_isOnBeat = false;
+        left_isOnBeat = false;
 
 
-    
+        if (left_isOnBeat)
+        {
+            keepDistanceTimer_left -= Time.deltaTime;
+        }
+        else
+        {
+            keepDistanceTimer_left = 1f;
+        }
+
 
     }
 
@@ -33,7 +43,9 @@ public class AudioSyncVariantSpawn_Left : AudioSyncer
 
     }
 
-
     public bool left_isOnBeat;
+
+    public float keepDistanceTimer_left = 1f;
+
 
 }

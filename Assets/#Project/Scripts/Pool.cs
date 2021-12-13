@@ -21,11 +21,12 @@ public class Pool : MonoBehaviour
     public VariantSpawnTimeStamps variantScriptTimeStamp;
 
     public ClientBehaviour clientVariant;
+    public ClientBehaviour client;
 
     public GameObject clientVariantGo;
+    public GameObject clientGo ;
 
 
-    private ClientBehaviour client;
 
 
 
@@ -44,7 +45,7 @@ public class Pool : MonoBehaviour
         }
         else
         {
-            GameObject clientGo = Instantiate(clientPrefab, position, rotation);
+            clientGo = Instantiate(clientPrefab, position, rotation);
             clientGo.transform.parent = transform;      // to make it a child 
 
             client = clientGo.GetComponent<ClientBehaviour>();
@@ -57,7 +58,6 @@ public class Pool : MonoBehaviour
 
         client.gameObject.SetActive(false);
         clientList.Add(client);
-        //print("Kill");
 
     }
 
@@ -91,25 +91,6 @@ public class Pool : MonoBehaviour
         }
         return clientVariant;
     }
-
-
-    // public void ShowVariant()       // showVariant on left pool / spawner or right pool/spawner 
-    // {
-    //     if (variantScriptTimeStamp.timeCheck())      // show Variant if time is true 
-    //     {
-    //         if (clientVariantList.Count > 0)
-    //         {
-    //             clientVariantList.RemoveAt(0);
-
-    //         }
-
-
-
-    //         clientVariant.gameObject.SetActive(true);
-
-    //     }
-    // }
-
 
 
 

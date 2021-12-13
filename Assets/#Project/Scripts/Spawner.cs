@@ -4,9 +4,6 @@ using UnityEngine;
 using UnityEngine.AI;
 
 
-// how to determine left or right spawn for variant 
-
-
 public class Spawner : MonoBehaviour
 {
     public Pool pool;
@@ -16,11 +13,6 @@ public class Spawner : MonoBehaviour
     public ClientBehaviour client;
 
     public List<TargetPoints> targetPoints;
-
-
-
-
-
 
 
     // Start is called before the first frame update
@@ -34,16 +26,17 @@ public class Spawner : MonoBehaviour
     }
 
 
-
-
     public IEnumerator Spawn()
     {
         while (true)
+
         {
+            print(client.agent.speed);
+            
             client = pool.Create(transform.position, transform.rotation);
-            
+
             client.targetPoints = targetPoints;
-            
+
             yield return new WaitForSeconds(delay);
         }
     }
@@ -67,7 +60,6 @@ public class Spawner : MonoBehaviour
 
     void Update()
     {
-        
 
     }
 

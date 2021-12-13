@@ -12,16 +12,9 @@ public class ClientBehaviour : MonoBehaviour
 
     public NavMeshAgent agent;
 
-    // public Spawner spawner;
-
-    //public CheckZone checkZone;
-
-
-
     public int indexNextDestination = -1;
 
-    [SerializeField]
-    private float clientSpeed = 2f;
+    public float clientSpeed;
 
     public Vector3 actualDestination;
 
@@ -46,8 +39,8 @@ public class ClientBehaviour : MonoBehaviour
 
 
         agent.autoBraking = true;       // if false then doesnt detect stopping distance ?? 
-        clientSpeed = agent.speed;
-        clientSpeed = 2f;
+        clientSpeed = 3f;
+        agent.speed = clientSpeed;
 
 
     }
@@ -62,13 +55,6 @@ public class ClientBehaviour : MonoBehaviour
         {
             NextDestination();
         }
-
-
-        // if (checkZone.changeDest)
-        // {
-        //     indexNextDestination = 2;
-        // }
-
     }
 
 
