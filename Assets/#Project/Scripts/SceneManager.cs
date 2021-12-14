@@ -58,7 +58,6 @@ public class SceneManager : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (audioSyncVariantSpawn_Left.left_isOnBeat)
@@ -74,10 +73,10 @@ public class SceneManager : MonoBehaviour
 
 
 
-            // l_Pool.clientGo.transform.parent = l_Transform;
-            // client = l_Pool.client;
+            l_Pool.clientGo.transform.parent = l_Transform;
+            client = l_Pool.client;
 
-            //KeepDistance_Left();
+            KeepDistance_Left();
 
 
 
@@ -96,10 +95,10 @@ public class SceneManager : MonoBehaviour
 
 
 
-            // r_Pool.clientGo.transform.parent = r_Transform;
-            // client = r_Pool.client;
+            r_Pool.clientGo.transform.parent = r_Transform;
+            client = r_Pool.client;
 
-            //KeepDistance_Right();
+            KeepDistance_Right();
 
 
 
@@ -125,31 +124,31 @@ public class SceneManager : MonoBehaviour
         //}
     }
 
-    // public void KeepDistance_Left()
-    // {
+    public void KeepDistance_Left()
+    {
 
-    //     if (audioSyncVariantSpawn_Left.keepDistanceTimer_left > 0)
-    //     {
-    //         client.gameObject.SetActive(false);
-    //     }
-    //     else
-    //     {
-    //         client.gameObject.SetActive(true);
-    //     }
-    // }
+        if (audioSyncVariantSpawn_Left.keepDistanceTimer_left > 0)
+        {
+            client.gameObject.SetActive(false);
+        }
+        else
+        {
+            client.gameObject.SetActive(true);
+        }
+    }
 
-    // public void KeepDistance_Right()
-    // {
+    public void KeepDistance_Right()
+    {
 
-    //     if (audioSyncVariantSpawn_Right.keepDistanceTimer_right > 0)
-    //     {
-    //         client.gameObject.SetActive(false);
-    //     }
-    //     else
-    //     {
-    //         client.gameObject.SetActive(true);
-    //     }
-    // }
+        if (audioSyncVariantSpawn_Right.keepDistanceTimer_right > 0)
+        {
+            client.gameObject.SetActive(false);
+        }
+        else
+        {
+            client.gameObject.SetActive(true);
+        }
+    }
 
 
 

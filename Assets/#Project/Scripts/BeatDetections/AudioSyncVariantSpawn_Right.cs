@@ -38,7 +38,6 @@ public class AudioSyncVariantSpawn_Right : AudioSyncer
         base.OnBeat();
         right_isOnBeat = true;
 
-        print("beat detected by me");
     }
 
 

@@ -31,7 +31,6 @@ public class Spawner : MonoBehaviour
         while (true)
 
         {
-            print(client.agent.speed);
             
             client = pool.Create(transform.position, transform.rotation);
 
