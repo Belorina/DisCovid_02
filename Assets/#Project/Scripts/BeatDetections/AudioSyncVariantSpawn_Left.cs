@@ -29,7 +29,7 @@ public class AudioSyncVariantSpawn_Left : AudioSyncer
         }
         else
         {
-            keepDistanceTimer_left = 1f;
+            keepDistanceTimer_left = 0.5f;
         }
 
 
@@ -45,7 +45,7 @@ public class AudioSyncVariantSpawn_Left : AudioSyncer
 
     public bool left_isOnBeat;
 
-    public float keepDistanceTimer_left = 1f;
+    public float keepDistanceTimer_left = 0.5f;
 
 
 }

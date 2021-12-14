@@ -26,7 +26,7 @@ public class AudioSyncVariantSpawn_Right : AudioSyncer
         }
         else
         {
-            keepDistanceTimer_right = 1f;
+            keepDistanceTimer_right = 0.5f;
         }
 
 
@@ -42,7 +42,7 @@ public class AudioSyncVariantSpawn_Right : AudioSyncer
 
 
     public bool right_isOnBeat;
-    public float keepDistanceTimer_right = 1f;
+    public float keepDistanceTimer_right = 0.5f;
 
 
 }
