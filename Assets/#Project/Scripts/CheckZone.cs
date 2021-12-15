@@ -76,6 +76,7 @@ public class CheckZone : MonoBehaviour
             clientVariant.actualDestination = targetPoints[2].GivePoint();
             clientVariant.agent.SetDestination(clientVariant.actualDestination);
 
+
             print("Not masked caught! ");
         }
 
@@ -119,6 +120,14 @@ public class CheckZone : MonoBehaviour
 
         nearSecurity = false;
         //check = false;
+
+
+        if (check && !spacePressed && !keyPressed)
+        {
+            scoreSystem.SubstractScore(1);
+
+            print("He is going in NOO");
+        }
 
     }
 
