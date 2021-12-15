@@ -11,9 +11,6 @@ public class CheckZone : MonoBehaviour
 
     public bool check;
 
-
-    public int score;
-
     public KeyCode keyCodes;
 
     public bool keyPressed;
@@ -29,6 +26,8 @@ public class CheckZone : MonoBehaviour
 
     public Spawner spawner;
 
+    public ScoreSystem scoreSystem;
+
 
 
     // Start is called before the first frame update
@@ -38,7 +37,9 @@ public class CheckZone : MonoBehaviour
         spawner = GetComponentInParent(typeof(Spawner)) as Spawner;
 
         targetPoints = spawner.targetPoints;
-        
+
+
+        scoreSystem = GameObject.Find("Score_Manager").GetComponent<ScoreSystem>();
 
 
     }
@@ -65,7 +66,7 @@ public class CheckZone : MonoBehaviour
         {
             // not masked client near security, space and arrow pressed 
 
-            score++;
+            scoreSystem.AddScore(1);
 
             // positive visual and sound? 
 
@@ -83,7 +84,7 @@ public class CheckZone : MonoBehaviour
         {
             // masked client near security, space and arrow pressed
 
-            score--;
+            scoreSystem.SubstractScore(1);
 
             // go away 
             client.targetPoints = targetPoints;
