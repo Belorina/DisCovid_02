@@ -10,7 +10,7 @@ public class Conductor : MonoBehaviour
     //number of seconds for each song beat 
     public float secPerBeat;
 
-    //Curre,t song position, sec 
+    //Current song position, sec 
     public float songPosition;
 
     //Current song position, beats 
