@@ -22,6 +22,8 @@ public class CheckZone : MonoBehaviour
 
 
     public ClientBehaviour clientVariant;
+    public ClientBehaviour client;
+
 
     public List<TargetPoints> targetPoints;
 
@@ -83,8 +85,10 @@ public class CheckZone : MonoBehaviour
 
             score--;
 
-            // shake secu ? as negative reponse? 
-
+            // go away 
+            client.targetPoints = targetPoints;
+            client.actualDestination = targetPoints[2].GivePoint();
+            client.agent.SetDestination(client.actualDestination);
 
             print("Oops he is masked");
         }
@@ -102,6 +106,10 @@ public class CheckZone : MonoBehaviour
             nearSecurity = true;
             clientVariant = other.gameObject.GetComponent<ClientBehaviour>();
             //check = false;
+        }
+        else
+        {
+            client = other.gameObject.GetComponent<ClientBehaviour>();
         }
     }
 
