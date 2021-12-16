@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SceneManager : MonoBehaviour
+
+public class LevelManager : MonoBehaviour
 {
+    
 
     // public bool spawn_Left;
     // public bool spawn_right;
-    
+
     // public GameObject leftGameObject;
     // public GameObject rightGameObject;
 
@@ -26,9 +28,12 @@ public class SceneManager : MonoBehaviour
     public AudioSyncVariantSpawn_Right audioSyncVariantSpawn_Right;
 
 
+
     private ClientBehaviour clientVariant;
     private ClientBehaviour client;
     private List<ClientBehaviour> clientVariantList;
+
+
 
 
 
@@ -54,7 +59,6 @@ public class SceneManager : MonoBehaviour
         audioSyncVariantSpawn_Left = FindObjectOfType<AudioSyncVariantSpawn_Left>() as AudioSyncVariantSpawn_Left;
 
         audioSyncVariantSpawn_Right = FindObjectOfType<AudioSyncVariantSpawn_Right>() as AudioSyncVariantSpawn_Right;
-
 
     }
 
@@ -105,6 +109,8 @@ public class SceneManager : MonoBehaviour
         }
         audioSyncVariantSpawn_Right.SetFalse();
 
+
+
     }
 
 
@@ -149,6 +155,12 @@ public class SceneManager : MonoBehaviour
             client.gameObject.SetActive(true);
         }
     }
+
+
+
+
+
+
 
 
 
