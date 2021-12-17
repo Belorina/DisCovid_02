@@ -29,8 +29,8 @@ public class LevelManager : MonoBehaviour
 
 
 
-    private ClientBehaviour clientVariant;
-    private ClientBehaviour client;
+    public ClientBehaviour clientVariant;
+    public ClientBehaviour client;
     private List<ClientBehaviour> clientVariantList;
 
 
