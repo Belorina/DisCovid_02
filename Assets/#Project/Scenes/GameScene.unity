@@ -750,7 +750,7 @@ GameObject:
   - component: {fileID: 223909640}
   - component: {fileID: 223909641}
   m_Layer: 0
-  m_Name: SceneManager
+  m_Name: LevelManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -790,6 +790,8 @@ MonoBehaviour:
   r_Transform: {fileID: 303394520}
   audioSyncVariantSpawn_Left: {fileID: 129412913}
   audioSyncVariantSpawn_Right: {fileID: 183421419}
+  clientVariant: {fileID: 0}
+  client: {fileID: 0}
 --- !u!114 &223909641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1139,9 +1141,11 @@ MonoBehaviour:
   clientVariantList: []
   clientPrefab: {fileID: 2225974840954391654, guid: b52dde4a5a252d54989e9a9cc4d1972e, type: 3}
   clientVariantPrefab: {fileID: 870864969794094134, guid: 700ba54f78837de4597585b93bfc9a3e, type: 3}
-  variantScriptTimeStamp: {fileID: 0}
   clientVariant: {fileID: 0}
   client: {fileID: 0}
+  accsRandom: {fileID: 994629976}
+  newCPrefab: {fileID: 0}
+  newCVPrefab: {fileID: 0}
   clientVariantGo: {fileID: 0}
   clientGo: {fileID: 0}
 --- !u!114 &303394524
@@ -3332,6 +3336,61 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 979345620}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &994629974
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 994629975}
+  - component: {fileID: 994629976}
+  m_Layer: 0
+  m_Name: Random
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &994629975
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994629974}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &994629976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994629974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0cda9167e8a6bd44b407841c7842b3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newCPrefab: {fileID: 0}
+  Prefab1: {fileID: 3887881866133649554, guid: 1b5875e83fc9e924caaa48a2fa55329b, type: 3}
+  Prefab2: {fileID: 5581872935315321423, guid: 69d40ddb80899584fb55eab480446100, type: 3}
+  Prefab3: {fileID: 901750512400428790, guid: 0d2dc69ad5518ba40af99b56dd00cbe0, type: 3}
+  Prefab4: {fileID: 8211478305749039167, guid: afd9d1dfbf26deb42b8dd5f9fb9959a7, type: 3}
+  Prefab5: {fileID: 8457072958681874463, guid: bd8acbc12ba1e8449b4b66fdb9dc1b8e, type: 3}
+  newCVPrefab: {fileID: 0}
+  maskedPrefab1: {fileID: 5569805508612673717, guid: 91f8af2915b3c464884f1c42bd8428e2, type: 3}
+  maskedPrefab2: {fileID: 6619330892787037986, guid: 8adabcece2b46a441b7bd9e562fab967, type: 3}
+  maskedPrefab3: {fileID: 8683438531851395708, guid: cac2cdce479e1e745a6644da07630669, type: 3}
+  maskedPrefab4: {fileID: 1099282625331187847, guid: 4b0ba70d90fc60e488b3e640b94c981d, type: 3}
+  maskedPrefab5: {fileID: 8421461535494588634, guid: 987f843ae12638c4ab1b7fecbcfef707, type: 3}
 --- !u!1 &1049002412
 GameObject:
   m_ObjectHideFlags: 0
@@ -5190,9 +5249,11 @@ MonoBehaviour:
   clientVariantList: []
   clientPrefab: {fileID: 2225974840954391654, guid: b52dde4a5a252d54989e9a9cc4d1972e, type: 3}
   clientVariantPrefab: {fileID: 870864969794094134, guid: 700ba54f78837de4597585b93bfc9a3e, type: 3}
-  variantScriptTimeStamp: {fileID: 0}
   clientVariant: {fileID: 0}
   client: {fileID: 0}
+  accsRandom: {fileID: 994629976}
+  newCPrefab: {fileID: 0}
+  newCVPrefab: {fileID: 0}
   clientVariantGo: {fileID: 0}
   clientGo: {fileID: 0}
 --- !u!114 &1745048518

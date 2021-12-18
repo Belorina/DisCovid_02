@@ -18,6 +18,10 @@ public class Spawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        client = pool.client;
+        clientVariant = pool.clientVariant;
+
+
         StartCoroutine(SpawnVariant());     // have to start coroutine in start method otherwhise spawn multiple at once
 
         StartCoroutine(Spawn());

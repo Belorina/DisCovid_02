@@ -18,14 +18,34 @@ public class Pool : MonoBehaviour
     public GameObject clientPrefab;
     public GameObject clientVariantPrefab;
 
-    public VariantSpawnTimeStamps variantScriptTimeStamp;
+    //public VariantSpawnTimeStamps variantScriptTimeStamp;
 
     public ClientBehaviour clientVariant;
     public ClientBehaviour client;
 
-    public GameObject clientVariantGo;
-    public GameObject clientGo ;
+    public AccsRandomaser accsRandom;
+    public GameObject newCPrefab;
+    public GameObject newCVPrefab;
 
+    public GameObject clientVariantGo;
+    public GameObject clientGo;
+
+    public void Start()
+    {
+        accsRandom = GameObject.Find("Random").GetComponent<AccsRandomaser>();
+
+
+
+    }
+
+    public void Update()
+    {
+        newCPrefab = accsRandom.newCPrefab;
+        newCVPrefab = accsRandom.newCVPrefab;
+
+        clientPrefab = newCPrefab;
+        clientVariantPrefab = newCVPrefab;
+    }
 
 
 
