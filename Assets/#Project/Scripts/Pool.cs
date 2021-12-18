@@ -15,8 +15,8 @@ public class Pool : MonoBehaviour
 
     public List<ClientBehaviour> clientVariantList = new List<ClientBehaviour>();
 
-    public GameObject clientPrefab;
-    public GameObject clientVariantPrefab;
+    // public GameObject clientPrefab;
+    // public GameObject clientVariantPrefab;
 
     //public VariantSpawnTimeStamps variantScriptTimeStamp;
 
@@ -32,9 +32,10 @@ public class Pool : MonoBehaviour
 
     public void Start()
     {
-        accsRandom = GameObject.Find("Random").GetComponent<AccsRandomaser>();
+        accsRandom = GetComponentInChildren<AccsRandomaser>();
 
-
+        newCPrefab = accsRandom.newCPrefab;
+        newCVPrefab = accsRandom.newCVPrefab;
 
     }
 
@@ -43,8 +44,8 @@ public class Pool : MonoBehaviour
         newCPrefab = accsRandom.newCPrefab;
         newCVPrefab = accsRandom.newCVPrefab;
 
-        clientPrefab = newCPrefab;
-        clientVariantPrefab = newCVPrefab;
+        // clientPrefab = newCPrefab;
+        // clientVariantPrefab = newCVPrefab;
     }
 
 
@@ -65,7 +66,7 @@ public class Pool : MonoBehaviour
         }
         else
         {
-            clientGo = Instantiate(clientPrefab, position, rotation);
+            clientGo = Instantiate(newCPrefab, position, rotation);
             clientGo.transform.parent = transform;      // to make it a child 
 
             client = clientGo.GetComponent<ClientBehaviour>();
@@ -93,13 +94,15 @@ public class Pool : MonoBehaviour
             clientVariant = clientVariantList[0];
             clientVariant.transform.position = position;
             clientVariant.transform.rotation = rotation;
-            clientVariant.gameObject.SetActive(false);
+            // clientVariant.gameObject.SetActive(false);
+            
+            
         }
         else
         {
             if (clientVariantList.Count < 1)
             {
-                clientVariantGo = Instantiate(clientVariantPrefab, position, rotation);
+                clientVariantGo = Instantiate(newCVPrefab, position, rotation);
 
                 //clientVariantGo.transform.parent = transform;       // to make it a child 
             }

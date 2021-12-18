@@ -425,9 +425,11 @@ GameObject:
   - component: {fileID: 3001688841692225741}
   - component: {fileID: 7517617030711927293}
   - component: {fileID: 2283310077369852786}
+  - component: {fileID: 8503179321717765403}
+  - component: {fileID: 4073242148792452244}
   m_Layer: 0
   m_Name: Masked_Guy_Big_Brows
-  m_TagString: Untagged
+  m_TagString: Masked
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -439,7 +441,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5569805508612673717}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -447,7 +449,7 @@ Transform:
   - {fileID: 4182062422540580009}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!195 &7517617030711927293
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -487,6 +489,35 @@ MonoBehaviour:
   clientSpeed: 0
   actualDestination: {x: 0, y: 0, z: 0}
   targetPoints: []
+--- !u!65 &8503179321717765403
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5569805508612673717}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 3, z: 1}
+  m_Center: {x: -0, y: 1.5, z: -0}
+--- !u!54 &4073242148792452244
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5569805508612673717}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &7899786376192816335
 GameObject:
   m_ObjectHideFlags: 0
