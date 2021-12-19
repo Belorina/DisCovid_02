@@ -15,38 +15,16 @@ public class Pool : MonoBehaviour
 
     public List<ClientBehaviour> clientVariantList = new List<ClientBehaviour>();
 
-    // public GameObject clientPrefab;
-    // public GameObject clientVariantPrefab;
+    public GameObject clientPrefab;
+    public GameObject clientVariantPrefab;
 
     //public VariantSpawnTimeStamps variantScriptTimeStamp;
 
     public ClientBehaviour clientVariant;
     public ClientBehaviour client;
 
-    public AccsRandomaser accsRandom;
-    public GameObject newCPrefab;
-    public GameObject newCVPrefab;
-
     public GameObject clientVariantGo;
     public GameObject clientGo;
-
-    public void Start()
-    {
-        accsRandom = GetComponentInChildren<AccsRandomaser>();
-
-        newCPrefab = accsRandom.newCPrefab;
-        newCVPrefab = accsRandom.newCVPrefab;
-
-    }
-
-    public void Update()
-    {
-        newCPrefab = accsRandom.newCPrefab;
-        newCVPrefab = accsRandom.newCVPrefab;
-
-        // clientPrefab = newCPrefab;
-        // clientVariantPrefab = newCVPrefab;
-    }
 
 
 
@@ -66,7 +44,7 @@ public class Pool : MonoBehaviour
         }
         else
         {
-            clientGo = Instantiate(newCPrefab, position, rotation);
+            clientGo = Instantiate(clientPrefab, position, rotation);
             clientGo.transform.parent = transform;      // to make it a child 
 
             client = clientGo.GetComponent<ClientBehaviour>();
@@ -102,7 +80,7 @@ public class Pool : MonoBehaviour
         {
             if (clientVariantList.Count < 1)
             {
-                clientVariantGo = Instantiate(newCVPrefab, position, rotation);
+                clientVariantGo = Instantiate(clientVariantPrefab, position, rotation);
 
                 //clientVariantGo.transform.parent = transform;       // to make it a child 
             }
