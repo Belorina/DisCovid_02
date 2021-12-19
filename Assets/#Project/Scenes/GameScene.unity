@@ -1142,7 +1142,7 @@ MonoBehaviour:
   clientVariantList: []
   clientVariant: {fileID: 0}
   client: {fileID: 0}
-  accsRandom: {fileID: 1388517155}
+  accsRandom: {fileID: 0}
   newCPrefab: {fileID: 0}
   newCVPrefab: {fileID: 0}
   clientVariantGo: {fileID: 0}
@@ -1191,13 +1191,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 310332989}
-  m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 271410058}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!108 &310332991
 Light:
   m_ObjectHideFlags: 0
@@ -3848,13 +3848,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1283646489}
-  m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 271410058}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!108 &1283646491
 Light:
   m_ObjectHideFlags: 0
@@ -5304,7 +5304,7 @@ MonoBehaviour:
   clientVariantList: []
   clientVariant: {fileID: 0}
   client: {fileID: 0}
-  accsRandom: {fileID: 994629976}
+  accsRandom: {fileID: 0}
   newCPrefab: {fileID: 0}
   newCVPrefab: {fileID: 0}
   clientVariantGo: {fileID: 0}
