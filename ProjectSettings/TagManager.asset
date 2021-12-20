@@ -10,6 +10,7 @@ TagManager:
   - Ear_Masked
   - Left_CheckZone
   - Right_CheckZone
+  - Light
   layers:
   - Default
   - TransparentFX

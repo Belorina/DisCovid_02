@@ -18,8 +18,9 @@ public class CheckZone : MonoBehaviour
     public bool spacePressed;
 
 
-    public ClientBehaviour clientVariant;
+
     public ClientBehaviour client;
+    public ClientBehaviour clientVariant;
 
 
     public List<TargetPoints> targetPoints;
@@ -50,6 +51,16 @@ public class CheckZone : MonoBehaviour
 
         spacePressed = Input.GetKeyUp(KeyCode.Space);
 
+        // if (Input.GetKeyDown(KeyCode.Space))
+        // {
+        //     spacePressed = true;
+        // }
+        // else
+        // {
+        //     spacePressed = false;
+        // }
+        
+
         if (Input.GetKeyDown(keyCodes))
         {
             keyPressed = true;
@@ -71,8 +82,10 @@ public class CheckZone : MonoBehaviour
             // positive visual and sound? 
 
             // tell Vclient to change targetpoint to TP2 streets 
-    
+            print("before TP " + targetPoints);
             clientVariant.targetPoints = targetPoints;
+            print("after TP " + targetPoints);
+
             clientVariant.actualDestination = targetPoints[2].GivePoint();
             clientVariant.agent.SetDestination(clientVariant.actualDestination);
 

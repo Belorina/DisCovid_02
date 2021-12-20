@@ -54,7 +54,7 @@ PrefabInstance:
     - target: {fileID: 2225974840954391652, guid: b52dde4a5a252d54989e9a9cc4d1972e, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 0d5f09953fd98904ea8cd3866cedd3fb, type: 2}
+      objectReference: {fileID: 2100000, guid: d8c2b1df52548014083010fe43272b4f, type: 2}
     - target: {fileID: 2225974840954391654, guid: b52dde4a5a252d54989e9a9cc4d1972e, type: 3}
       propertyPath: m_Name
       value: Client Variant
@@ -66,6 +66,18 @@ PrefabInstance:
     - target: {fileID: 2225974840954391654, guid: b52dde4a5a252d54989e9a9cc4d1972e, type: 3}
       propertyPath: m_TagString
       value: Not_Masked
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405264866268902788, guid: b52dde4a5a252d54989e9a9cc4d1972e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405264866268902788, guid: b52dde4a5a252d54989e9a9cc4d1972e, type: 3}
+      propertyPath: m_TagString
+      value: Not_Masked
+      objectReference: {fileID: 0}
+    - target: {fileID: 4920967984461211640, guid: b52dde4a5a252d54989e9a9cc4d1972e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6427161971003592245, guid: b52dde4a5a252d54989e9a9cc4d1972e, type: 3}
       propertyPath: m_CollisionDetection

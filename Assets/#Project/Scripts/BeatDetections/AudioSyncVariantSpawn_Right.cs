@@ -41,7 +41,6 @@ public class AudioSyncVariantSpawn_Right : AudioSyncer
     }
 
 
-    public bool right_isOnBeat;
     public float keepDistanceTimer_right = 0.5f;
 
 
