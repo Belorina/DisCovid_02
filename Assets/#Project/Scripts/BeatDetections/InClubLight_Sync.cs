@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lights_Sync : AudioSyncer
+public class InClubLight_Sync : AudioSyncer
 {
     // Start is called before the first frame update
     public void Start()
@@ -11,9 +11,8 @@ public class Lights_Sync : AudioSyncer
 
         //neonLight = neon.GetComponent<Light>();
 
-        neonLight_1.intensity = restIntens;
-        // neonLight_2.intensity = restIntens;
-        // neonLight_3.intensity = restIntens;
+        spotlight_1.intensity = restIntens;
+        spotlight_2.intensity = restIntens;
 
     }
 
@@ -27,9 +26,8 @@ public class Lights_Sync : AudioSyncer
     {
         timer = 0;
 
-        neonLight_1.intensity = _target;
-        // neonLight_2.intensity = _target;
-        // neonLight_3.intensity = _target;
+        spotlight_1.intensity = _target;
+        spotlight_2.intensity = _target;
         print("beat coroutine intensity changed");
 
         yield return null;
@@ -38,9 +36,8 @@ public class Lights_Sync : AudioSyncer
     private IEnumerator MoveToRestIntensity(float _target)
     {
 
-        neonLight_1.intensity = _target;
-        // neonLight_2.intensity = _target;
-        // neonLight_3.intensity = _target;
+        spotlight_1.intensity = _target;
+        spotlight_2.intensity = _target;
 
         print("rest co routine intens changed");
         yield return null;
@@ -81,9 +78,8 @@ public class Lights_Sync : AudioSyncer
     }
 
     // public GameObject neon;
-    public Light neonLight_1;
-    // public Light neonLight_2;
-    // public Light neonLight_3;
+    public Light spotlight_1;
+    public Light spotlight_2;
 
 
     public float beatIntens = 8;

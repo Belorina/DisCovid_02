@@ -79,6 +79,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6335336612961055119, guid: b52dde4a5a252d54989e9a9cc4d1972e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6427161971003592245, guid: b52dde4a5a252d54989e9a9cc4d1972e, type: 3}
       propertyPath: m_CollisionDetection
       value: 0
@@ -93,7 +97,7 @@ PrefabInstance:
       objectReference: {fileID: 4629689076063878868}
     - target: {fileID: 7283574068424505078, guid: b52dde4a5a252d54989e9a9cc4d1972e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -3869931333548405016, guid: b52dde4a5a252d54989e9a9cc4d1972e, type: 3}
