@@ -14,11 +14,6 @@ public class AudioSyncVariantSpawn_Right : AudioSyncer
     public override void OnUpdate()
     {
         base.OnUpdate();
-
-        if (m_isBeat) return;
-
-        right_isOnBeat = false;
-
         
         if (right_isOnBeat)
         {
@@ -28,6 +23,13 @@ public class AudioSyncVariantSpawn_Right : AudioSyncer
         {
             keepDistanceTimer_right = 0.5f;
         }
+        
+
+        if (m_isBeat) return;
+
+        right_isOnBeat = false;
+
+        
 
 
     }

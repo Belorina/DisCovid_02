@@ -27,6 +27,8 @@ public class LevelManager : MonoBehaviour
     public AudioSyncVariantSpawn_Left audioSyncVariantSpawn_Left;
     public AudioSyncVariantSpawn_Right audioSyncVariantSpawn_Right;
 
+    public Lights_Sync lights_Sync;
+
 
 
     public ClientBehaviour clientVariant;
@@ -59,6 +61,8 @@ public class LevelManager : MonoBehaviour
         audioSyncVariantSpawn_Left = FindObjectOfType<AudioSyncVariantSpawn_Left>() as AudioSyncVariantSpawn_Left;
 
         audioSyncVariantSpawn_Right = FindObjectOfType<AudioSyncVariantSpawn_Right>() as AudioSyncVariantSpawn_Right;
+
+        lights_Sync = FindObjectOfType<Lights_Sync>() as Lights_Sync;
 
     }
 
@@ -110,6 +114,13 @@ public class LevelManager : MonoBehaviour
         audioSyncVariantSpawn_Right.SetFalse();
 
 
+        
+
+        // if (lights_Sync.moved == true)
+        // {
+        //     print("Lights is false");
+        //     lights_Sync.SetLightsFalse();
+        // }
 
     }
 
