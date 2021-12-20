@@ -9,7 +9,7 @@ public class Lights_Sync : AudioSyncer
     // Start is called before the first frame update
     void Start()
     {
-        neon = GameObject.Find("Neon").
+        neon = GameObject.Find("Neon").GetComponent
 
 
         
