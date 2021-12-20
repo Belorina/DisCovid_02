@@ -7,9 +7,9 @@ public class Lights_Sync : AudioSyncer
     // Start is called before the first frame update
     public void Start()
     {
-        neon = GameObject.Find("/Neon/pink_light");
+        //neon = GameObject.Find("/Neon/pink_light");
 
-        neonLight = neon.GetComponent<Light>();
+        //neonLight = neon.GetComponent<Light>();
 
         neonLight.intensity = restIntens;
 
@@ -24,8 +24,6 @@ public class Lights_Sync : AudioSyncer
     private IEnumerator MoveToBeatIntensity(float _target)
     {
         timer = 0;
-
-
 
         neonLight.intensity = _target;
         print("beat coroutine intensity changed");
@@ -49,18 +47,6 @@ public class Lights_Sync : AudioSyncer
     {
         base.OnUpdate();
 
-        // if (neonLight.intensity == restIntens && lightsIsOnBeat)
-        // {
-        //     neonLight.intensity = beatIntens;
-        //     SetLightsFalse();
-        // }
-
-        // if (neonLight.intensity == beatIntens && lightsIsOnBeat)
-        // {
-        //     neonLight.intensity = restIntens;
-        //     print("get back");
-        //     SetLightsFalse();
-        // }
 
         timer += Time.deltaTime;
 
@@ -87,10 +73,10 @@ public class Lights_Sync : AudioSyncer
         StartCoroutine("MoveToBeatIntensity", beatIntens);
     }
 
-    public float beatIntens = 8;
-    public float restIntens = 4;
     public GameObject neon;
     public Light neonLight;
+    public float beatIntens = 8;
+    public float restIntens = 4;
 
     public bool lightsIsOnBeat;
 
