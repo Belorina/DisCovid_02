@@ -8,7 +8,7 @@ public class SceneChanger : MonoBehaviour
 {
     void Start()
     {
-        Screen.SetResolution(1600, 1200, false);
+        Screen.SetResolution(1600, 1200, true);
     }
 
 
