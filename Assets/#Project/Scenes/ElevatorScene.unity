@@ -1452,7 +1452,7 @@ GameObject:
   - component: {fileID: 1032415806}
   - component: {fileID: 1032415805}
   m_Layer: 5
-  m_Name: Credits_tmp
+  m_Name: Discovid_tmp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1508,7 +1508,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 1
+  m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
     topLeft: {r: 0.98366356, g: 0, b: 1, a: 1}
