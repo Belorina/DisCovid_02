@@ -79,7 +79,6 @@ public class CheckZone : MonoBehaviour
 
             scoreSystem.AddScore(1);
 
-            // positive visual and sound? 
 
             // tell Vclient to change targetpoint to TP2 streets 
             print("before TP " + targetPoints);
@@ -120,7 +119,6 @@ public class CheckZone : MonoBehaviour
         {
             nearSecurity = true;
             clientVariant = other.gameObject.GetComponent<ClientBehaviour>();
-            //check = false;
         }
         else
         {

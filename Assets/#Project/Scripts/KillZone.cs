@@ -26,12 +26,15 @@ public class KillZone : MonoBehaviour
 
         if (client != null && client.CompareTag("Masked"))
         {
+
             pool.Kill(client);
+            client.indexNextDestination = -1;
         }
 
         if (clientVariant != null && clientVariant.CompareTag("Not_Masked"))
         {
             pool.KillVariant(clientVariant);
+            clientVariant.indexNextDestination = -1;
 
         }
     }
